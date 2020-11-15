@@ -20,17 +20,17 @@
     var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Google Assistant APP   Google助理是由Google所開發之智慧型個人助理，在2018年10月16日於臺灣上線。其後在隔年三月開放台灣的第三方程式可以與其介接。(即Action On Google平台)它提供智慧家庭以及語音應用程式的介接，讓使用者能藉由語音進行互動  執行原理  Google助理： 為Google開發的智慧型個人助理 在第三方應用的角色是處理語音辨識及">
+  <meta name="description" content="Google Assistant APP   Google助理是由Google所開發之智慧型個人助理，在2018年10月16日於臺灣上線。其後在隔年三月開放台灣的第三方程式可以與其介接。它提供智慧家庭以及語音應用程式的介接，讓使用者能藉由語音進行互動  執行原理  Google助理： 為Google開發的智慧型個人助理 在第三方應用的角色是處理語音辨識及傳遞回應給使用者   DialogFlow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Google 助理簡介">
 <meta property="og:url" content="https://hank199599.github.io/blog/2020/11/15/google-assistant-introduction/index.html">
 <meta property="og:site_name" content="隨筆部落格">
-<meta property="og:description" content="Google Assistant APP   Google助理是由Google所開發之智慧型個人助理，在2018年10月16日於臺灣上線。其後在隔年三月開放台灣的第三方程式可以與其介接。(即Action On Google平台)它提供智慧家庭以及語音應用程式的介接，讓使用者能藉由語音進行互動  執行原理  Google助理： 為Google開發的智慧型個人助理 在第三方應用的角色是處理語音辨識及">
+<meta property="og:description" content="Google Assistant APP   Google助理是由Google所開發之智慧型個人助理，在2018年10月16日於臺灣上線。其後在隔年三月開放台灣的第三方程式可以與其介接。它提供智慧家庭以及語音應用程式的介接，讓使用者能藉由語音進行互動  執行原理  Google助理： 為Google開發的智慧型個人助理 在第三方應用的角色是處理語音辨識及傳遞回應給使用者   DialogFlow">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/c/cb/Google_Assistant_logo.svg">
 <meta property="og:image" content="https://developers.google.com/assistant/conversational/images/aog-user-query-to-fulfillment.png">
 <meta property="article:published_time" content="2020-11-15T07:45:09.000Z">
-<meta property="article:modified_time" content="2020-11-15T07:59:47.733Z">
+<meta property="article:modified_time" content="2020-11-15T08:01:09.533Z">
 <meta property="article:author" content="Hank Yu">
 <meta property="article:tag" content="Google Assistant">
 <meta property="article:tag" content="Voice APP">
@@ -190,7 +190,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-11-15 15:45:09 / 修改時間：15:59:47" itemprop="dateCreated datePublished" datetime="2020-11-15T15:45:09+08:00">2020-11-15</time>
+              <time title="創建時間：2020-11-15 15:45:09 / 修改時間：16:01:09" itemprop="dateCreated datePublished" datetime="2020-11-15T15:45:09+08:00">2020-11-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,7 +215,7 @@
       
         <p><a target="_blank" rel="noopener" href="https://assistant.google.com/intl/zh_tw/"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Google_Assistant_logo.svg" width=100 height=100 /></a></p>
 <h2 id="Google-Assistant-APP"><a href="#Google-Assistant-APP" class="headerlink" title="Google Assistant APP  "></a>Google Assistant APP  </h2><blockquote>
-<p>Google助理是由Google所開發之智慧型個人助理，<br>在2018年10月16日於臺灣上線。其後在隔年三月開放台灣的第三方程式可以與其介接。<br>(即Action On Google平台)<br>它提供智慧家庭以及語音應用程式的介接，讓使用者能藉由語音進行互動</p>
+<p>Google助理是由Google所開發之智慧型個人助理，<br>在2018年10月16日於臺灣上線。其後在隔年三月開放台灣的第三方程式可以與其介接。<br>它提供智慧家庭以及語音應用程式的介接，讓使用者能藉由語音進行互動</p>
 </blockquote>
 <h2 id="執行原理"><a href="#執行原理" class="headerlink" title="執行原理"></a>執行原理</h2><p><a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversational/overview"><img src="https://developers.google.com/assistant/conversational/images/aog-user-query-to-fulfillment.png" /></a></p>
 <ul>
