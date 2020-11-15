@@ -20,17 +20,22 @@
     var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="記錄在轉職路上的點點滴滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="隨筆部落格">
-<meta property="og:url" content="https://hank199599.github.io/blog/archives/index.html">
+  <meta name="description" content="藉由 Colab大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。藉由實作書本上的範例程式碼。 關於書籍書本採用Jerry推薦的《精通 Python：運用簡單的套件進行現代運算》（第二版）Introducing Python, 2nd Edition   作者： Bill Lubanovic譯者： 賴屹民出版社：歐萊禮出版日期：2020&#x2F;06&#x2F;02語言：繁體中文   章節 第一章 初嘗">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 基礎學習紀錄與檔案分享">
+<meta property="og:url" content="https://hank199599.github.io/blog/2020/11/15/python-reading-log/index.html">
 <meta property="og:site_name" content="隨筆部落格">
-<meta property="og:description" content="記錄在轉職路上的點點滴滴">
+<meta property="og:description" content="藉由 Colab大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。藉由實作書本上的範例程式碼。 關於書籍書本採用Jerry推薦的《精通 Python：運用簡單的套件進行現代運算》（第二版）Introducing Python, 2nd Edition   作者： Bill Lubanovic譯者： 賴屹民出版社：歐萊禮出版日期：2020&#x2F;06&#x2F;02語言：繁體中文   章節 第一章 初嘗">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-11-15T03:40:44.000Z">
+<meta property="article:modified_time" content="2020-11-15T03:44:53.398Z">
 <meta property="article:author" content="Hank Yu">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="基礎">
+<meta property="article:tag" content="baseline">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://hank199599.github.io/blog/archives/">
+<link rel="canonical" href="https://hank199599.github.io/blog/2020/11/15/python-reading-log/">
 
 
 <script id="page-configurations">
@@ -38,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-tw'
   };
 </script>
 
-  <title>歸檔 | 隨筆部落格</title>
+  <title>Python 基礎學習紀錄與檔案分享 | 隨筆部落格</title>
   
 
 
@@ -142,70 +147,97 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共有 2 篇文章。 繼續努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2020/11/15/python-reading-log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Hank Yu">
+      <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨筆部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python 基礎學習紀錄與檔案分享
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-11-15 11:40:44 / 修改時間：11:44:53" itemprop="dateCreated datePublished" datetime="2020-11-15T11:40:44+08:00">2020-11-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-11-15T11:40:44+08:00"
-              content="2020-11-15">
-          11-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2020/11/15/python-reading-log/" itemprop="url">
-            <span itemprop="name">Python 基礎學習紀錄與檔案分享</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-11-15T08:50:04+08:00"
-              content="2020-11-15">
-          11-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2020/11/15/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <p>藉由 <a target="_blank" rel="noopener" href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Colab</a><br>大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。<br>藉由實作書本上的範例程式碼。</p>
+<h2 id="關於書籍"><a href="#關於書籍" class="headerlink" title="關於書籍"></a>關於書籍</h2><p>書本採用Jerry推薦的<br><strong>《精通 Python：運用簡單的套件進行現代運算》（第二版）</strong><br>Introducing Python, 2nd Edition  </p>
+<p>作者： Bill Lubanovic<br>譯者： 賴屹民<br>出版社：歐萊禮<br>出版日期：2020/06/02<br>語言：繁體中文  </p>
+<h2 id="章節"><a href="#章節" class="headerlink" title="章節"></a>章節</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter1.ipynb">第一章 初嘗py</a> </li>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter2.ipynb">第二章 資料：型態、值、變數與名稱</a></li>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter3.ipynb">第三章 數字</a></li>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter4.ipynb">第四章 用if來選擇</a></li>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter5.ipynb">第五章 文字字串</a></li>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter6.ipynb">第六章 用while與for來執行迴圈</a></li>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter7.ipynb">第七章 tuple與串列</a></li>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter8.ipynb">第八章 字典與集合</a></li>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter9.ipynb">第九章 函式</a></li>
+<li><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter10.ipynb">第十章 喔喔：物件與類別</a></li>
+</ul>
+<h2 id="參與讀書會"><a href="#參與讀書會" class="headerlink" title="參與讀書會"></a>參與讀書會</h2><p>時間：11/10 ~ 1/5<br>如果希望參與線上讀書會，歡迎點擊<a target="_blank" rel="noopener" href="https://www.meetup.com/en-AU/TensorFlow-User-Group-Taipei/events/274161446/">Meetup的報名頁面</a></p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/Python/" rel="tag"># Python</a>
+              <a href="/blog/tags/%E5%9F%BA%E7%A4%8E/" rel="tag"># 基礎</a>
+              <a href="/blog/tags/baseline/" rel="tag"># baseline</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/11/15/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -258,6 +290,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%9C%E6%96%BC%E6%9B%B8%E7%B1%8D"><span class="nav-number">1.</span> <span class="nav-text">關於書籍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%A0%E7%AF%80"><span class="nav-number">2.</span> <span class="nav-text">章節</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%88%87%E8%AE%80%E6%9B%B8%E6%9C%83"><span class="nav-number">3.</span> <span class="nav-text">參與讀書會</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
