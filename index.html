@@ -158,6 +158,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2020/11/15/assistant-technical/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Hank Yu">
+      <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨筆部落格">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/11/15/assistant-technical/" class="post-title-link" itemprop="url">第一章 基礎運作原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-11-15 23:43:29" itemprop="dateCreated datePublished" datetime="2020-11-15T23:43:29+08:00">2020-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-11-16 01:13:28" itemprop="dateModified" datetime="2020-11-16T01:13:28+08:00">2020-11-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Google-Assistant/" itemprop="url" rel="index"><span itemprop="name">Google Assistant</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基礎運作方式"><a href="#基礎運作方式" class="headerlink" title="基礎運作方式"></a>基礎運作方式</h1><p><img src="https://hank199599.github.io/assets/img/dbd725edb3a93e79.png" alt="image">  </p>
+<p><strong>Google助理</strong>作為中介腳色，<br>將使用者輸入的語句以傳給第三方的Action。<br>待第三方Action處理完生成對應回應後再藉由<strong>Google助理</strong>呈現給使用者。  </p>
+<p>與第三方Action對話的過程中，除非Action自動退出對話或觸發對應Intent。<br>是無法離開與第三方Action的互動的。</p>
+<h1 id="呼叫Action的方法"><a href="#呼叫Action的方法" class="headerlink" title="呼叫Action的方法"></a>呼叫Action的方法</h1><p>根據<a target="_blank" rel="noopener" href="https://developers.google.com/assistant/console/languages-locales?fbclid=IwAR3v1glwTkwbEBdRJwzq5wPXZzgDGzaEPZ1H-I_M8duGi_l68KiTYSMU95U#chinese-traditional">官方說明頁面</a>，在中文(台灣)的使用情境下支援以下呼叫方式：</p>
+<h2 id="觸發動作名稱的基本動詞："><a href="#觸發動作名稱的基本動詞：" class="headerlink" title="觸發動作名稱的基本動詞："></a>觸發動作名稱的基本動詞：</h2><ul>
+<li>叫</li>
+<li>對話</li>
+<li>對談</li>
+<li>詢問</li>
+<li>說話</li>
+<li>講話</li>
+</ul>
+<h2 id="用戶能指示Google助理存取您的操作的示例短語："><a href="#用戶能指示Google助理存取您的操作的示例短語：" class="headerlink" title="用戶能指示Google助理存取您的操作的示例短語："></a>用戶能指示Google助理存取您的操作的示例短語：</h2><ul>
+<li> 幫我叫<em>$name</em></li>
+<li> 能幫我叫下 <em>$name</em> 嗎</li>
+<li> 我想和 <em>$name</em> 對話</li>
+<li> 我可以和 <em>$name</em> 進行對談嗎</li>
+<li> 詢問 <em>$name</em> </li>
+<li> 我想找 <em>$name</em> 說話</li>
+<li> 我要跟 <em>$name</em> 說話</li>
+<li> 我要跟 <em>$name</em> 講話</li>
+</ul>
+<h1 id="調用Action的方式"><a href="#調用Action的方式" class="headerlink" title="調用Action的方式"></a>調用Action的方式</h1><p>呼叫Google助理調用Action的方式，<br>依據用戶是否明白指出調用的Action而分為兩種調用方式：</p>
+<h2 id="顯式調用-Explicit-Invocation"><a href="#顯式調用-Explicit-Invocation" class="headerlink" title="顯式調用(Explicit Invocation)"></a>顯式調用(Explicit Invocation)</h2><p>使用者清楚地向Google助理表達欲使用的Action為何者<br><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%961.png" alt="image">  </p>
+<h3 id="未指定特定動作"><a href="#未指定特定動作" class="headerlink" title="未指定特定動作"></a>未指定特定動作</h3><p>一般情況下，若使用者未向Action指定想進行的操作為何。<br>Google會將使用者導入開發者預定的<strong>預設歡迎畫面(Default Welcome Intent)</strong>  </p>
+<p><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%962.png" alt="image">  </p>
+<h3 id="指定特定動作-：語音版捷徑"><a href="#指定特定動作-：語音版捷徑" class="headerlink" title="指定特定動作 ：語音版捷徑"></a>指定特定動作 ：語音版捷徑</h3><p>用戶也可以選擇在調用同時<strong>添加一個調用短語</strong>，<br>這方式得以將使用者直接帶到他們所請求的意圖。<br>其語言架構如下所示：<br><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%963.png" alt="image"> </p>
+<h4 id="用戶能指示Google助理存取您的操作的示例短語：-1"><a href="#用戶能指示Google助理存取您的操作的示例短語：-1" class="headerlink" title="用戶能指示Google助理存取您的操作的示例短語："></a>用戶能指示Google助理存取您的操作的示例短語：</h4><ul>
+<li> 叫<em>$name</em> <strong>$request_action</strong></li>
+<li> 跟 <em>$name</em> 說 <strong>$request_action</strong></li>
+<li> 問 <em>$name</em> <strong>$request_action</strong></li>
+</ul>
+<h4 id="實際系統運作時的架構圖"><a href="#實際系統運作時的架構圖" class="headerlink" title="實際系統運作時的架構圖"></a>實際系統運作時的架構圖</h4><p><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%965.png" alt="image">  </p>
+<h2 id="隱式調用-Implicit-invocation"><a href="#隱式調用-Implicit-invocation" class="headerlink" title="隱式調用(Implicit invocation)"></a>隱式調用(Implicit invocation)</h2><p><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%964.png" alt="image"><br>調用短語描述了Action的特定功能。<br>用戶調用您的操作時，可能會包含一個可以深度鏈接到特定功能之一的調用短語。<br>舉例來說，如果使用者想玩1A2B。<br>可能會直接向Google助理詢問。<br>而Google助理就會自Actions On Google平台尋找最類似的Action推薦使用者。<br>不過這項功能在<strong>中文版尚未啟用</strong>，只能在draft(草案)模式下試用。</p>
+<h1 id="加入Fulfillment後的運作方式"><a href="#加入Fulfillment後的運作方式" class="headerlink" title="加入Fulfillment後的運作方式"></a>加入Fulfillment後的運作方式</h1><blockquote>
+<p>詳情參見：<a href="">第五章 撰寫 DialogFlow Fulfillment</a></p>
+</blockquote>
+<p><img src="https://hank199599.github.io/assets/img/dd9b9b73a367c4a6.png" alt="image"><br>在DialogFlow的使用情境中，<br>開發者只能進行基本的回應而<strong>無法加入邏輯判斷</strong>等深度回應。<br>透過部屬於雲端Function，能讓Google助理進行更多元的功能。<br>例如：抓取API獲取資料、存取Database等操作</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2020/11/15/google-assistant-introduction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -181,10 +292,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-11-15 15:45:09 / 修改時間：16:03:03" itemprop="dateCreated datePublished" datetime="2020-11-15T15:45:09+08:00">2020-11-15</time>
+              <time title="創建時間：2020-11-15 15:45:09" itemprop="dateCreated datePublished" datetime="2020-11-15T15:45:09+08:00">2020-11-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-11-16 01:13:22" itemprop="dateModified" datetime="2020-11-16T01:13:22+08:00">2020-11-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -229,15 +346,15 @@
 </li>
 </ul>
 <h2 id="教學文件-尚未建立"><a href="#教學文件-尚未建立" class="headerlink" title="教學文件(尚未建立)"></a>教學文件(尚未建立)</h2><ul>
-<li><a href="">第一章 基礎運作原理介紹</a> </li>
+<li><a href="">第一章 基礎運作原理</a> </li>
 <li><a href="">第二章 建立Action on Google專案</a></li>
 <li><a href="">第三章 建立Dialogflow 專案</a></li>
 <li><a href="">第四章 在Google Assistant上試用</a></li>
-<li><a href="">第五章 撰寫 DialogFlow Fullfillment</a></li>
+<li><a href="">第五章 撰寫 DialogFlow  Fulfillment</a></li>
 <li><a href="">第六章 介紹 Node.js 與 NPM套件</a></li>
-<li><a href="">第七章 在本地端撰寫 Fullfillment</a></li>
+<li><a href="">第七章 在本地端撰寫 Fulfillment</a></li>
 <li><a href="">第八章 建立Firebase專案</a></li>
-<li><a href="">第九章 部屬Fuction到Firebase</a></li>
+<li><a href="">第九章 部屬Function到Firebase</a></li>
 <li><a href="">第十章 簡介API</a></li>
 <li><a href="">第十一章 async function</a></li>
 <li><a href="">第十二章 Promise</a></li>
@@ -504,7 +621,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -515,7 +632,7 @@
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">標籤</span>
       </div>
   </nav>
