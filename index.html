@@ -217,7 +217,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-11-17 11:39:33 / 修改時間：23:02:55" itemprop="dateCreated datePublished" datetime="2020-11-17T11:39:33+08:00">2020-11-17</time>
+              <time title="創建時間：2020-11-17 11:39:33 / 修改時間：23:11:17" itemprop="dateCreated datePublished" datetime="2020-11-17T11:39:33+08:00">2020-11-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,38 +240,43 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="建立前提：檢查你的Google權限設定"><a href="#建立前提：檢查你的Google權限設定" class="headerlink" title="建立前提：檢查你的Google權限設定"></a>建立前提：檢查你的Google權限設定</h1><ol>
-<li>前往<a target="_blank" rel="noopener" href="https://myaccount.google.com/activitycontrols">「活動控制項」頁面</a></li>
-<li>登入你的Google帳號</li>
-<li>請確認以下權限都已經啟用：<br>網路和應用程式活動<br>[x] 包括 Chrome 歷史記錄以及採用 Google 服務的網站、應用程式和裝置中的活動記錄<br>[x] 包括音訊記錄</li>
-</ol>
-<p>若你未完成上述設定，可能會在後續的開發中碰到錯誤。<br>請確認你已經完成這些設定後再繼續操作喲!</p>
-<h1 id="登入Actions-On-Google-控制台"><a href="#登入Actions-On-Google-控制台" class="headerlink" title="登入Actions On Google 控制台"></a>登入Actions On Google 控制台</h1><ol>
-<li><p>點擊這個連結進入<a target="_blank" rel="noopener" href="https://console.actions.google.com/u/0/">Actions On Google 控制台</a></p>
-</li>
-<li><p>點擊[New Project]按鈕<br><img src="https://hank199599.github.io/assets/img/process01.png" alt="image">  </p>
-</li>
-<li><p>在跳出選單中輸入以下資訊：</p>
-<ul>
-<li>Project Name</li>
-<li>選取 <strong>Action與用戶互動預設的使用語言</strong></li>
-<li>選取 <strong>你所在的國家/地區</strong><br>待上述資訊都設定完畢後，按右下方的[Create Project]<br><img src="https://hank199599.github.io/assets/img/process02.png" alt="image"> </li>
-</ul>
-</li>
-<li><p>進入初始化選單，在這裡請選擇「Custom」<br><img src="https://hank199599.github.io/assets/img/process03.png" alt="image">  </p>
-</li>
-<li><p>進入進階選單，在這裡請選擇位在選單最下方的「build your Action with Dialogflow」<br><img src="https://hank199599.github.io/assets/img/process04.png" alt="image">  </p>
-</li>
-<li><p>恭喜你，大功告成!<br>請前往下一個章節繼續進行<br><img src="https://hank199599.github.io/assets/img/process05.png" alt="image"></p>
-</li>
-</ol>
-<h1 id="Actions目錄概觀"><a href="#Actions目錄概觀" class="headerlink" title="Actions目錄概觀"></a>Actions目錄概觀</h1><p>Action專案是您Action的容器，<br>裝載與您Action相關的數據（名稱，描述，類別）。這些內容會構成您Action的目錄內容：</p>
+          <h1 id="概述Action專案"><a href="#概述Action專案" class="headerlink" title="概述Action專案"></a>概述Action專案</h1><p><img src="https://hank199599.github.io/assets/img/AOG_logo.png" alt="AOG_logo"><br>它被用來專載你的Action，<br>無論是建構對話式Action或智慧家庭的介接都需要經過這一步驟。</p>
+<h2 id="Actions目錄概觀"><a href="#Actions目錄概觀" class="headerlink" title="Actions目錄概觀"></a>Actions目錄概觀</h2><p>是您Action的容器，<br>裝載與您Action相關的數據（名稱，描述，類別）。這些內容會構成您Action的目錄內容：</p>
 <ol>
 <li>Action 名稱</li>
 <li>內容描述</li>
 <li>Action使用類別</li>
 <li>使用範例</li>
-<li>適用裝置<br><img src="https://hank199599.github.io/assets/img/directory.png" alt="image">  </li>
+<li>適用裝置<br><img src="https://hank199599.github.io/assets/img/directory.png" alt="directory">  </li>
+</ol>
+<h1 id="建立前提：檢查你的Google權限設定"><a href="#建立前提：檢查你的Google權限設定" class="headerlink" title="建立前提：檢查你的Google權限設定"></a>建立前提：檢查你的Google權限設定</h1><ol>
+<li>前往<a target="_blank" rel="noopener" href="https://myaccount.google.com/activitycontrols">「活動控制項」頁面</a></li>
+<li>登入你的Google帳號</li>
+<li>請確認以下權限都已經啟用：<br>網路和應用程式活動</li>
+</ol>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 包括 Chrome 歷史記錄以及採用 Google 服務的網站、應用程式和裝置中的活動記錄</li>
+<li><input checked="" disabled="" type="checkbox"> 包括音訊記錄</li>
+</ul>
+<p>若你未完成上述設定，可能會在後續的開發中碰到錯誤。<br>請確認你已經完成這些設定後再繼續操作喲!</p>
+<h1 id="登入Actions-On-Google-控制台"><a href="#登入Actions-On-Google-控制台" class="headerlink" title="登入Actions On Google 控制台"></a>登入Actions On Google 控制台</h1><ol>
+<li><p>點擊這個連結進入<a target="_blank" rel="noopener" href="https://console.actions.google.com/u/0/">Actions On Google 控制台</a></p>
+</li>
+<li><p>點擊[New Project]按鈕<br><img src="https://hank199599.github.io/assets/img/process01.png" alt="process01">  </p>
+</li>
+<li><p>在跳出選單中輸入以下資訊：</p>
+<ul>
+<li>Project Name</li>
+<li>選取 <strong>Action與用戶互動預設的使用語言</strong></li>
+<li>選取 <strong>你所在的國家/地區</strong><br>待上述資訊都設定完畢後，按右下方的[Create Project]<br><img src="https://hank199599.github.io/assets/img/process02.png" alt="process02"> </li>
+</ul>
+</li>
+<li><p>進入初始化選單，在這裡請選擇「Custom」<br><img src="https://hank199599.github.io/assets/img/process03.png" alt="process03">  </p>
+</li>
+<li><p>進入進階選單，在這裡請選擇位在選單最下方的「build your Action with Dialogflow」<br><img src="https://hank199599.github.io/assets/img/process04.png" alt="process04">  </p>
+</li>
+<li><p>恭喜你，大功告成啦!<br>請前往下一個章節繼續進行下一個專案設定!<br><img src="https://hank199599.github.io/assets/img/process05.png" alt="process05"></p>
+</li>
 </ol>
 
       
@@ -531,7 +536,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2020/11/15/data-science-form-scrath-reading-log/" class="post-title-link" itemprop="url">從Python學資料科學 ： 學習紀錄</a>
+            <a href="/blog/2020/11/15/data-science-form-scrath-reading-log/" class="post-title-link" itemprop="url">從Python學資料科學：學習紀錄</a>
         </h2>
 
         <div class="post-meta">
@@ -540,10 +545,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-11-15 11:58:33 / 修改時間：15:40:58" itemprop="dateCreated datePublished" datetime="2020-11-15T11:58:33+08:00">2020-11-15</time>
+              <time title="創建時間：2020-11-15 11:58:33" itemprop="dateCreated datePublished" datetime="2020-11-15T11:58:33+08:00">2020-11-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-11-17 23:13:54" itemprop="dateModified" datetime="2020-11-17T23:13:54+08:00">2020-11-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
