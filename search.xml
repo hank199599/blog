@@ -92,32 +92,48 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 基礎學習紀錄與檔案分享</title>
-    <url>/blog/2020/11/15/python-reading-log/</url>
-    <content><![CDATA[<p>藉由 <a href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Colab</a><br>大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。<br>藉由實作書本上的範例程式碼來學習撰寫Python。</p>
-<h2 id="關於書籍"><a href="#關於書籍" class="headerlink" title="關於書籍"></a>關於書籍</h2><p>書本採用Jerry老師推薦的<br><strong>《精通 Python：運用簡單的套件進行現代運算》（第二版）</strong><br>Introducing Python, 2nd Edition  </p>
-<p>作者： Bill Lubanovic<br>譯者： 賴屹民<br>出版社：歐萊禮<br>出版日期：2020/06/02<br>語言：繁體中文  </p>
-<h2 id="章節"><a href="#章節" class="headerlink" title="章節"></a>章節</h2><ul>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter1.ipynb">第一章 初嘗py</a> </li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter2.ipynb">第二章 資料：型態、值、變數與名稱</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter3.ipynb">第三章 數字</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter4.ipynb">第四章 用if來選擇</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter5.ipynb">第五章 文字字串</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter6.ipynb">第六章 用while與for來執行迴圈</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter7.ipynb">第七章 tuple與串列</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter8.ipynb">第八章 字典與集合</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter9.ipynb">第九章 函式</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter10.ipynb">第十章 喔喔：物件與類別</a></li>
+    <title>第二章 建立Action on Google專案</title>
+    <url>/blog/2020/11/17/actions-on-google-project-create/</url>
+    <content><![CDATA[<h1 id="建立前提：檢查你的Google權限設定"><a href="#建立前提：檢查你的Google權限設定" class="headerlink" title="建立前提：檢查你的Google權限設定"></a>建立前提：檢查你的Google權限設定</h1><ol>
+<li>前往<a href="https://myaccount.google.com/activitycontrols">「活動控制項」頁面</a></li>
+<li>登入你的Google帳號</li>
+<li>請確認以下權限都已經啟用：<br>網路和應用程式活動<br>[x] 包括 Chrome 歷史記錄以及採用 Google 服務的網站、應用程式和裝置中的活動記錄<br>[x] 包括音訊記錄</li>
+</ol>
+<p>若你未完成上述設定，可能會在後續的開發中碰到錯誤。<br>請確認你已經完成這些設定後再繼續操作喲!</p>
+<h1 id="登入Actions-On-Google-控制台"><a href="#登入Actions-On-Google-控制台" class="headerlink" title="登入Actions On Google 控制台"></a>登入Actions On Google 控制台</h1><ol>
+<li><p>點擊這個連結進入<a href="https://console.actions.google.com/u/0/">Actions On Google 控制台</a></p>
+</li>
+<li><p>點擊[New Project]按鈕<br><img src="https://hank199599.github.io/assets/img/process01.png" alt="image">  </p>
+</li>
+<li><p>在跳出選單中輸入以下資訊：</p>
+<ul>
+<li>Project Name</li>
+<li>選取 <strong>Action與用戶互動預設的使用語言</strong></li>
+<li>選取 <strong>你所在的國家/地區</strong><br>待上述資訊都設定完畢後，按右下方的[Create Project]<br><img src="https://hank199599.github.io/assets/img/process02.png" alt="image"> </li>
 </ul>
-<h2 id="參與讀書會"><a href="#參與讀書會" class="headerlink" title="參與讀書會"></a>參與讀書會</h2><p>時間：11/10 ~ 1/5<br>如果希望參與線上讀書會，歡迎點擊<a href="https://www.meetup.com/en-AU/TensorFlow-User-Group-Taipei/events/274161446/">Meetup的報名頁面</a></p>
+</li>
+<li><p>進入初始化選單，在這裡請選擇「Custom」<br><img src="https://hank199599.github.io/assets/img/process03.png" alt="image">  </p>
+</li>
+<li><p>進入進階選單，在這裡請選擇位在選單最下方的「build your Action with Dialogflow」<br><img src="https://hank199599.github.io/assets/img/process04.png" alt="image">  </p>
+</li>
+</ol>
+<h1 id="Actions目錄概觀"><a href="#Actions目錄概觀" class="headerlink" title="Actions目錄概觀"></a>Actions目錄概觀</h1><p>Action專案是您Action的容器，<br>裝載與您Action相關的數據（名稱，描述，類別）。這些內容會構成您Action的目錄內容：</p>
+<ol>
+<li>Action 名稱</li>
+<li>內容描述</li>
+<li>Action使用類別</li>
+<li>使用範例</li>
+<li>適用裝置<br><img src="https://hank199599.github.io/assets/img/directory.png" alt="image">  </li>
+</ol>
 ]]></content>
       <categories>
-        <category>Python</category>
+        <category>Google Assistant</category>
       </categories>
       <tags>
+        <tag>Google Assistant</tag>
+        <tag>Voice APP</tag>
+        <tag>教學文件</tag>
         <tag>baseline</tag>
-        <tag>Python</tag>
-        <tag>基礎</tag>
       </tags>
   </entry>
   <entry>
@@ -174,48 +190,32 @@
       </tags>
   </entry>
   <entry>
-    <title>第二章 建立Action on Google專案</title>
-    <url>/blog/2020/11/17/actions-on-google-project-create/</url>
-    <content><![CDATA[<h1 id="建立前提：檢查你的Google權限設定"><a href="#建立前提：檢查你的Google權限設定" class="headerlink" title="建立前提：檢查你的Google權限設定"></a>建立前提：檢查你的Google權限設定</h1><ol>
-<li>前往<a href="https://myaccount.google.com/activitycontrols">「活動控制項」頁面</a></li>
-<li>登入你的Google帳號</li>
-<li>請確認以下權限都已經啟用：<br>網路和應用程式活動<br>[x] 包括 Chrome 歷史記錄以及採用 Google 服務的網站、應用程式和裝置中的活動記錄<br>[x] 包括音訊記錄</li>
-</ol>
-<p>若你未完成上述設定，可能會在後續的開發中碰到錯誤。<br>請確認你已經完成這些設定後再繼續操作喲!</p>
-<h1 id="登入Actions-On-Google-控制台"><a href="#登入Actions-On-Google-控制台" class="headerlink" title="登入Actions On Google 控制台"></a>登入Actions On Google 控制台</h1><ol>
-<li><p>點擊這個連結進入<a href="https://console.actions.google.com/u/0/">Actions On Google 控制台</a></p>
-</li>
-<li><p>點擊[New Project]按鈕<br><img src="https://hank199599.github.io/assets/img/process01.png" alt="image">  </p>
-</li>
-<li><p>在跳出選單中輸入以下資訊：</p>
-<ul>
-<li>Project Name</li>
-<li>選取 <strong>Action與用戶互動預設的使用語言</strong></li>
-<li>選取 <strong>你所在的國家/地區</strong><br>待上述資訊都設定完畢後，按右下方的[Create Project]<br><img src="https://hank199599.github.io/assets/img/process02.png" alt="image"> </li>
+    <title>Python 基礎學習紀錄與檔案分享</title>
+    <url>/blog/2020/11/15/python-reading-log/</url>
+    <content><![CDATA[<p>藉由 <a href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Colab</a><br>大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。<br>藉由實作書本上的範例程式碼來學習撰寫Python。</p>
+<h2 id="關於書籍"><a href="#關於書籍" class="headerlink" title="關於書籍"></a>關於書籍</h2><p>書本採用Jerry老師推薦的<br><strong>《精通 Python：運用簡單的套件進行現代運算》（第二版）</strong><br>Introducing Python, 2nd Edition  </p>
+<p>作者： Bill Lubanovic<br>譯者： 賴屹民<br>出版社：歐萊禮<br>出版日期：2020/06/02<br>語言：繁體中文  </p>
+<h2 id="章節"><a href="#章節" class="headerlink" title="章節"></a>章節</h2><ul>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter1.ipynb">第一章 初嘗py</a> </li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter2.ipynb">第二章 資料：型態、值、變數與名稱</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter3.ipynb">第三章 數字</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter4.ipynb">第四章 用if來選擇</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter5.ipynb">第五章 文字字串</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter6.ipynb">第六章 用while與for來執行迴圈</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter7.ipynb">第七章 tuple與串列</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter8.ipynb">第八章 字典與集合</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter9.ipynb">第九章 函式</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter10.ipynb">第十章 喔喔：物件與類別</a></li>
 </ul>
-</li>
-<li><p>進入初始化選單，在這裡請選擇「Custom」<br><img src="https://hank199599.github.io/assets/img/process03.png" alt="image">  </p>
-</li>
-<li><p>進入進階選單，在這裡請選擇位在選單最下方的「build your Action with Dialogflow」<br><img src="https://hank199599.github.io/assets/img/process04.png" alt="image">  </p>
-</li>
-</ol>
-<h1 id="Actions目錄概觀"><a href="#Actions目錄概觀" class="headerlink" title="Actions目錄概觀"></a>Actions目錄概觀</h1><p>Action專案是您Action的容器，<br>裝載與您Action相關的數據（名稱，描述，類別）。這些內容會構成您Action的目錄內容：</p>
-<ol>
-<li>Action 名稱</li>
-<li>內容描述</li>
-<li>Action使用類別</li>
-<li>使用範例</li>
-<li>適用裝置<br><img src="https://hank199599.github.io/assets/img/directory.png" alt="image">  </li>
-</ol>
+<h2 id="參與讀書會"><a href="#參與讀書會" class="headerlink" title="參與讀書會"></a>參與讀書會</h2><p>時間：11/10 ~ 1/5<br>如果希望參與線上讀書會，歡迎點擊<a href="https://www.meetup.com/en-AU/TensorFlow-User-Group-Taipei/events/274161446/">Meetup的報名頁面</a></p>
 ]]></content>
       <categories>
-        <category>Google Assistant</category>
+        <category>Python</category>
       </categories>
       <tags>
-        <tag>Google Assistant</tag>
-        <tag>Voice APP</tag>
-        <tag>教學文件</tag>
         <tag>baseline</tag>
+        <tag>Python</tag>
+        <tag>基礎</tag>
       </tags>
   </entry>
 </search>
