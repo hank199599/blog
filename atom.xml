@@ -6,7 +6,7 @@
   <link href="https://hank199599.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://hank199599.github.io/blog/"/>
-  <updated>2020-11-19T02:42:35.017Z</updated>
+  <updated>2020-11-19T02:48:02.331Z</updated>
   <id>https://hank199599.github.io/blog/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://hank199599.github.io/blog/2020/11/19/dialogflow-project-create/"/>
     <id>https://hank199599.github.io/blog/2020/11/19/dialogflow-project-create/</id>
     <published>2020-11-19T01:46:43.000Z</published>
-    <updated>2020-11-19T02:42:35.017Z</updated>
+    <updated>2020-11-19T02:48:02.331Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://hank199599.github.io/assets/img/Dialogflow.png" alt="Dialogflow_logo">  </p><h1 id="Dialogflow"><a href="#Dialogflow" class="headerlink" title="Dialogflow"></a>Dialogflow</h1><blockquote><p>是一項屬於Google的開發工具，提供基於 <strong>自然語言對話(NLU)</strong> 的人機互動技術。</p></blockquote><h2 id="如何偕同Google助理運作的"><a href="#如何偕同Google助理運作的" class="headerlink" title="如何偕同Google助理運作的?"></a>如何偕同Google助理運作的?</h2><p>您可能想知道Google助理如何解析用戶輸入的語義（如語音）。<br>這是通過自然語言理解（NLU）來完成的，它使Google的軟體能夠識別語音中的單詞。</p><p>對於開發者自己的Action來說，<br>Dialogflow簡化了理解用戶輸入，從輸入中提取關鍵詞和短語以用來回應請求的意圖。<br>開發者可以在Dialogflow定義這一切的運作方式。<br><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%966.png" alt="示意圖6"></p><h1 id="建立DialogFlow專案"><a href="#建立DialogFlow專案" class="headerlink" title="建立DialogFlow專案"></a>建立DialogFlow專案</h1><ol><li>前往<a href="https://dialogflow.cloud.google.com/">DialgoFlow主控台</a><br>點擊位於左側選單上方的 [Create Agent],<br><img src="https://hank199599.github.io/assets/img/process06.png" alt="process06"></li><li>填寫Agent名稱以及要使用的Google Project<br>接著點擊位於畫面右上方的[Create]<br><img src="https://hank199599.github.io/assets/img/process07.png" alt="process07"></li><li>待上述步驟完成後，你就已經完成專案設定了!<br><img src="https://hank199599.github.io/assets/img/process08.png" alt="process08"></li></ol>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://hank199599.github.io/assets/img/Dialogflow.png" alt="Dialogflow_logo">  </p><h1 id="Dialogflow"><a href="#Dialogflow" class="headerlink" title="Dialogflow"></a>Dialogflow</h1><blockquote><p>是一項屬於Google的開發工具，提供基於 <strong>自然語言對話(NLU)</strong> 的人機互動技術。</p></blockquote><h2 id="如何偕同Google助理運作的"><a href="#如何偕同Google助理運作的" class="headerlink" title="如何偕同Google助理運作的?"></a>如何偕同Google助理運作的?</h2><p>您可能想知道Google助理如何解析用戶輸入的語義（如語音）。<br>這是通過自然語言理解（NLU）來完成的，它使Google的軟體能夠識別語音中的單詞。</p><p>對於開發者自己的Action來說，<br>Dialogflow簡化了理解用戶輸入，從輸入中提取關鍵詞和短語以用來回應請求的意圖。<br>開發者可以在Dialogflow定義這一切的運作方式。<br><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%966.png" alt="示意圖6"></p><h1 id="建立DialogFlow專案"><a href="#建立DialogFlow專案" class="headerlink" title="建立DialogFlow專案"></a>建立DialogFlow專案</h1><ol><li>前往<a href="https://dialogflow.cloud.google.com/">DialgoFlow主控台</a><br>點擊位於左側選單上方的 [Create Agent],<br><img src="https://hank199599.github.io/assets/img/process06.png" alt="process06"></li><li>填寫Agent名稱以及要使用的Google Project<br>接著點擊位於畫面右上方的[Create]<br><img src="https://hank199599.github.io/assets/img/process07.png" alt="process07"></li><li>待上述步驟完成後，你就已經完成專案設定了!<br><img src="https://hank199599.github.io/assets/img/process08.png" alt="process08"></li></ol><h1 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h1><p>在下一章中，我們會再次前往Actions On Google平台。<br>實際體驗看看加入Dialogflow偕同運作的Actions。</p>]]></content>
     
     
       
