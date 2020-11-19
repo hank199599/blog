@@ -6,7 +6,7 @@
   <link href="https://hank199599.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://hank199599.github.io/blog/"/>
-  <updated>2020-11-17T15:11:17.918Z</updated>
+  <updated>2020-11-19T02:35:20.750Z</updated>
   <id>https://hank199599.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>建立Dialogflow 專案</title>
+    <link href="https://hank199599.github.io/blog/2020/11/19/dialogflow-project-create/"/>
+    <id>https://hank199599.github.io/blog/2020/11/19/dialogflow-project-create/</id>
+    <published>2020-11-19T01:46:43.000Z</published>
+    <updated>2020-11-19T02:35:20.750Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://hank199599.github.io/assets/img/Dialogflow.png" alt="Dialogflow_logo">  </p><h1 id="Dialogflow"><a href="#Dialogflow" class="headerlink" title="Dialogflow"></a>Dialogflow</h1><blockquote><p>是一項屬於Google的開發工具，提供基於 <strong>自然語言對話(NLU)</strong> 的人機互動技術。</p></blockquote><h2 id="如何偕同Google助理運作的"><a href="#如何偕同Google助理運作的" class="headerlink" title="如何偕同Google助理運作的?"></a>如何偕同Google助理運作的?</h2><p>您可能想知道Google助理如何解析用戶輸入的語義（如語音）。<br>這是通過自然語言理解（NLU）來完成的，它使Google的軟體能夠識別語音中的單詞。</p><p>對於開發者自己的Action來說，<br>Dialogflow簡化了理解用戶輸入，從輸入中提取關鍵詞和短語以用來回應請求的意圖。<br>開發者可以在Dialogflow定義這一切的運作方式。<br><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%966.png" alt="示意圖6"></p><h1 id="建立DialogFlow專案"><a href="#建立DialogFlow專案" class="headerlink" title="建立DialogFlow專案"></a>建立DialogFlow專案</h1><ol><li>前往<a href="https://dialogflow.cloud.google.com/">DialgoFlow主控台</a><br><img src="https://hank199599.github.io/assets/img/process06.png" alt="process06"></li><li>接著點擊[Create Agent],<br>填寫Agent名稱以及要使用的Google Project<br><img src="https://hank199599.github.io/assets/img/process07.png" alt="process07"></li><li>待上述步驟完成後，你就已經完成專案設定了!<br><img src="https://hank199599.github.io/assets/img/process08.png" alt="process08"></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://hank199599.github.io/assets/img/Dialogflow.png&quot; alt=&quot;Dialogflow_logo&quot;&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;Dialogflow&quot;&gt;&lt;a href=&quot;#Dialogflow&quot; </summary>
+      
+    
+    
+    
+    <category term="Google Assistant" scheme="https://hank199599.github.io/blog/categories/Google-Assistant/"/>
+    
+    
+    <category term="Google Assistant" scheme="https://hank199599.github.io/blog/tags/Google-Assistant/"/>
+    
+    <category term="Voice APP" scheme="https://hank199599.github.io/blog/tags/Voice-APP/"/>
+    
+    <category term="教學文件" scheme="https://hank199599.github.io/blog/tags/%E6%95%99%E5%AD%B8%E6%96%87%E4%BB%B6/"/>
+    
+    <category term="baseline" scheme="https://hank199599.github.io/blog/tags/baseline/"/>
+    
+  </entry>
   
   <entry>
     <title>第二章 建立Action on Google專案</title>
