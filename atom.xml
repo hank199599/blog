@@ -6,7 +6,7 @@
   <link href="https://hank199599.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://hank199599.github.io/blog/"/>
-  <updated>2020-11-26T03:46:16.419Z</updated>
+  <updated>2020-11-26T03:57:51.103Z</updated>
   <id>https://hank199599.github.io/blog/</id>
   
   <author>
@@ -21,16 +21,14 @@
     <link href="https://hank199599.github.io/blog/2020/11/26/google-assistant-try/"/>
     <id>https://hank199599.github.io/blog/2020/11/26/google-assistant-try/</id>
     <published>2020-11-26T03:32:15.000Z</published>
-    <updated>2020-11-26T03:46:16.419Z</updated>
+    <updated>2020-11-26T03:57:51.103Z</updated>
     
-    <content type="html"><![CDATA[<p>#踏出第一步：修改對話內容</p><p><img src="https://hank199599.github.io/assets/img/process15.png" alt="image">  </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="踏出第一步：修改對話內容"><a href="#踏出第一步：修改對話內容" class="headerlink" title="踏出第一步：修改對話內容"></a>踏出第一步：修改對話內容</h1><p>首先，點擊進入Default Welcome Intent，並更改系統預設的回應<br><img src="https://hank199599.github.io/assets/img/process15.png" alt="image"> </p><p>刪除多餘的回應，最後只留下一個回應，並將其更改為：<br><strong>「歡迎，你喜歡的顏色是什麼?」</strong><br><img src="https://hank199599.github.io/assets/img/process16.png" alt="image">  </p><h1 id="進入正題，前往Actions-On-Google平台試用"><a href="#進入正題，前往Actions-On-Google平台試用" class="headerlink" title="進入正題，前往Actions On Google平台試用"></a>進入正題，前往Actions On Google平台試用</h1><ol><li>點擊左側選單面板「Intergrations」，<br><img src="https://hank199599.github.io/assets/img/process09.png" alt="image"><br><img src="https://hank199599.github.io/assets/img/process10.png" alt="image"> </li><li><img src="https://hank199599.github.io/assets/img/process11.png" alt="image"> </li><li><img src="https://hank199599.github.io/assets/img/process12.png" alt="image"> </li><li><img src="https://hank199599.github.io/assets/img/process13.png" alt="image"> </li><li><img src="https://hank199599.github.io/assets/img/process14.png" alt="image"> </li></ol>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;#踏出第一步：修改對話內容&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://hank199599.github.io/assets/img/process15.png&quot; alt=&quot;image&quot;&gt;  &lt;/p&gt;
-</summary>
+    <summary type="html">&lt;h1 id=&quot;踏出第一步：修改對話內容&quot;&gt;&lt;a href=&quot;#踏出第一步：修改對話內容&quot; class=&quot;headerlink&quot; title=&quot;踏出第一步：修改對話內容&quot;&gt;&lt;/a&gt;踏出第一步：修改對話內容&lt;/h1&gt;&lt;p&gt;首先，點擊進入Default Welcome Intent，</summary>
       
     
     
