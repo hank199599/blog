@@ -277,4 +277,21 @@
         <tag>深度學習</tag>
       </tags>
   </entry>
+  <entry>
+    <title>第四章 在Google Assistant上試用</title>
+    <url>/blog/2020/11/26/google-assistant-try/</url>
+    <content><![CDATA[<p>#踏出第一步：修改對話內容</p>
+<p><img src="https://hank199599.github.io/assets/img/process15.png" alt="image">  </p>
+]]></content>
+      <categories>
+        <category>Google Assistant</category>
+      </categories>
+      <tags>
+        <tag>Google Assistant</tag>
+        <tag>Voice APP</tag>
+        <tag>教學文件</tag>
+        <tag>baseline</tag>
+        <tag>建立專案</tag>
+      </tags>
+  </entry>
 </search>

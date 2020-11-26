@@ -6,7 +6,7 @@
   <link href="https://hank199599.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://hank199599.github.io/blog/"/>
-  <updated>2020-11-22T14:54:33.053Z</updated>
+  <updated>2020-11-26T03:46:16.419Z</updated>
   <id>https://hank199599.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第四章 在Google Assistant上試用</title>
+    <link href="https://hank199599.github.io/blog/2020/11/26/google-assistant-try/"/>
+    <id>https://hank199599.github.io/blog/2020/11/26/google-assistant-try/</id>
+    <published>2020-11-26T03:32:15.000Z</published>
+    <updated>2020-11-26T03:46:16.419Z</updated>
+    
+    <content type="html"><![CDATA[<p>#踏出第一步：修改對話內容</p><p><img src="https://hank199599.github.io/assets/img/process15.png" alt="image">  </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;#踏出第一步：修改對話內容&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://hank199599.github.io/assets/img/process15.png&quot; alt=&quot;image&quot;&gt;  &lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Google Assistant" scheme="https://hank199599.github.io/blog/categories/Google-Assistant/"/>
+    
+    
+    <category term="Google Assistant" scheme="https://hank199599.github.io/blog/tags/Google-Assistant/"/>
+    
+    <category term="Voice APP" scheme="https://hank199599.github.io/blog/tags/Voice-APP/"/>
+    
+    <category term="教學文件" scheme="https://hank199599.github.io/blog/tags/%E6%95%99%E5%AD%B8%E6%96%87%E4%BB%B6/"/>
+    
+    <category term="baseline" scheme="https://hank199599.github.io/blog/tags/baseline/"/>
+    
+    <category term="建立專案" scheme="https://hank199599.github.io/blog/tags/%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88/"/>
+    
+  </entry>
   
   <entry>
     <title>Deep Learning 學習紀錄</title>
