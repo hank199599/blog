@@ -53,46 +53,6 @@
       </tags>
   </entry>
   <entry>
-    <title>從Python學資料科學：學習紀錄</title>
-    <url>/blog/2020/11/15/data-science-form-scrath-reading-log/</url>
-    <content><![CDATA[<p>藉由 <a href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Colab</a><br>大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。<br>藉由實作書本上的範例程式碼來學習撰寫Python。</p>
-<h2 id="關於書籍"><a href="#關於書籍" class="headerlink" title="關於書籍"></a>關於書籍</h2><p>書本採用Jerry老師推薦的<br><strong>DATA SCIENCE FROM SCRATCH中文版：用PYTHON學資料科學</strong></p>
-<p>作者： Joel Grus<br>譯者： 藍子軒<br>出版社：歐萊禮<br>出版日期：2016-10-30<br>語言：繁體中文  </p>
-<h2 id="章節"><a href="#章節" class="headerlink" title="章節"></a>章節</h2><ul>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter3.ipynb">第3章 數據視覺化</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter4.ipynb">第4章 線性代數</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter5.ipynb">第5章 統計學</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter6.ipynb">第6章 機率</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter7.ipynb">第7章 假設與推論</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter8.ipynb">第8章 梯度遞減</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter9.ipynb">第9章 取得數據資料</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter10.ipynb">第10章 處理數據資料</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter11.ipynb">第11章 機器學習</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter12.ipynb">第12章 k最近鄰</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter13.ipynb">第13章 單純貝氏</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter14.ipynb">第14章 簡單線性迴歸</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter15.ipynb">第15章 多元迴歸</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter16.ipynb">第16章 邏輯迴歸</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter17.ipynb">第17章 決策樹</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter18.ipynb">第18章 神經網路</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter19.ipynb">第19章 深度學習</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter20.ipynb">第20章 集群</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter21.ipynb">第21章 自然語言處理</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter22.ipynb">第22章 網路分析</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter23.ipynb">第23章 推薦系統</a></li>
-</ul>
-<h2 id="參與讀書會"><a href="#參與讀書會" class="headerlink" title="參與讀書會"></a>參與讀書會</h2><p>時間：2021/3/2 ~ 2021/6/22 </p>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>資料科學</tag>
-        <tag>data science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>第一章 基礎運作原理</title>
     <url>/blog/2020/11/15/assistant-technical/</url>
     <content><![CDATA[<h1 id="基礎運作方式"><a href="#基礎運作方式" class="headerlink" title="基礎運作方式"></a>基礎運作方式</h1><p><img src="https://hank199599.github.io/assets/img/dbd725edb3a93e79.png" alt="image">  </p>
@@ -171,6 +131,46 @@
       </tags>
   </entry>
   <entry>
+    <title>從Python學資料科學：學習紀錄</title>
+    <url>/blog/2020/11/15/data-science-form-scrath-reading-log/</url>
+    <content><![CDATA[<p>藉由 <a href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Colab</a><br>大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。<br>藉由實作書本上的範例程式碼來學習撰寫Python。</p>
+<h2 id="關於書籍"><a href="#關於書籍" class="headerlink" title="關於書籍"></a>關於書籍</h2><p>書本採用Jerry老師推薦的<br><strong>DATA SCIENCE FROM SCRATCH中文版：用PYTHON學資料科學</strong></p>
+<p>作者： Joel Grus<br>譯者： 藍子軒<br>出版社：歐萊禮<br>出版日期：2016-10-30<br>語言：繁體中文  </p>
+<h2 id="章節"><a href="#章節" class="headerlink" title="章節"></a>章節</h2><ul>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter3.ipynb">第3章 數據視覺化</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter4.ipynb">第4章 線性代數</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter5.ipynb">第5章 統計學</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter6.ipynb">第6章 機率</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter7.ipynb">第7章 假設與推論</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter8.ipynb">第8章 梯度遞減</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter9.ipynb">第9章 取得數據資料</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter10.ipynb">第10章 處理數據資料</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter11.ipynb">第11章 機器學習</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter12.ipynb">第12章 k最近鄰</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter13.ipynb">第13章 單純貝氏</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter14.ipynb">第14章 簡單線性迴歸</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter15.ipynb">第15章 多元迴歸</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter16.ipynb">第16章 邏輯迴歸</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter17.ipynb">第17章 決策樹</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter18.ipynb">第18章 神經網路</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter19.ipynb">第19章 深度學習</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter20.ipynb">第20章 集群</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter21.ipynb">第21章 自然語言處理</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter22.ipynb">第22章 網路分析</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter23.ipynb">第23章 推薦系統</a></li>
+</ul>
+<h2 id="參與讀書會"><a href="#參與讀書會" class="headerlink" title="參與讀書會"></a>參與讀書會</h2><p>時間：2021/3/2 ~ 2021/6/22 </p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>資料科學</tag>
+        <tag>data science</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第三章 建立Dialogflow 專案</title>
     <url>/blog/2020/11/19/dialogflow-project-create/</url>
     <content><![CDATA[<p><img src="https://hank199599.github.io/assets/img/Dialogflow.png" alt="Dialogflow_logo">  </p>
@@ -194,6 +194,59 @@
         <tag>Voice APP</tag>
         <tag>教學文件</tag>
         <tag>baseline</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 基礎學習紀錄與檔案分享</title>
+    <url>/blog/2020/11/15/python-reading-log/</url>
+    <content><![CDATA[<p>藉由 <a href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Colab</a><br>大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。<br>藉由實作書本上的範例程式碼來學習撰寫Python。</p>
+<h2 id="關於書籍"><a href="#關於書籍" class="headerlink" title="關於書籍"></a>關於書籍</h2><p>書本採用Jerry老師推薦的<br><strong>《精通 Python：運用簡單的套件進行現代運算》（第二版）</strong><br>Introducing Python, 2nd Edition  </p>
+<p>作者： Bill Lubanovic<br>譯者： 賴屹民<br>出版社：歐萊禮<br>出版日期：2020/06/02<br>語言：繁體中文  </p>
+<h2 id="章節"><a href="#章節" class="headerlink" title="章節"></a>章節</h2><ul>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter1.ipynb">第一章 初嘗py</a> </li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter2.ipynb">第二章 資料：型態、值、變數與名稱</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter3.ipynb">第三章 數字</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter4.ipynb">第四章 用if來選擇</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter5.ipynb">第五章 文字字串</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter6.ipynb">第六章 用while與for來執行迴圈</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter7.ipynb">第七章 tuple與串列</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter8.ipynb">第八章 字典與集合</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter9.ipynb">第九章 函式</a></li>
+<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter10.ipynb">第十章 喔喔：物件與類別</a></li>
+</ul>
+<h2 id="參與讀書會"><a href="#參與讀書會" class="headerlink" title="參與讀書會"></a>參與讀書會</h2><p>時間：11/10 ~ 1/5<br>如果希望參與線上讀書會，歡迎點擊<a href="https://www.meetup.com/en-AU/TensorFlow-User-Group-Taipei/events/274161446/">Meetup的報名頁面</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>baseline</tag>
+        <tag>Python</tag>
+        <tag>基礎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第四章 在Google Assistant上試用</title>
+    <url>/blog/2020/11/26/google-assistant-try/</url>
+    <content><![CDATA[<h1 id="踏出第一步：修改對話內容"><a href="#踏出第一步：修改對話內容" class="headerlink" title="踏出第一步：修改對話內容"></a>踏出第一步：修改對話內容</h1><p>首先，點擊進入Default Welcome Intent，並更改系統預設的回應<br><img src="https://hank199599.github.io/assets/img/process15.png" alt="image"> </p>
+<p>刪除多餘的回應，最後只留下一個回應，並將其更改為：<br><strong>「歡迎，你喜歡的顏色是什麼?」</strong><br><img src="https://hank199599.github.io/assets/img/process16.png" alt="image">  </p>
+<h1 id="進入正題，前往Actions-On-Google平台試用"><a href="#進入正題，前往Actions-On-Google平台試用" class="headerlink" title="進入正題，前往Actions On Google平台試用"></a>進入正題，前往Actions On Google平台試用</h1><ol>
+<li>點擊左側選單面板「Intergrations」，<br><img src="https://hank199599.github.io/assets/img/process09.png" alt="image"><br><img src="https://hank199599.github.io/assets/img/process10.png" alt="image"> </li>
+<li><img src="https://hank199599.github.io/assets/img/process11.png" alt="image"> </li>
+<li><img src="https://hank199599.github.io/assets/img/process12.png" alt="image"> </li>
+<li><img src="https://hank199599.github.io/assets/img/process13.png" alt="image"> </li>
+<li><img src="https://hank199599.github.io/assets/img/process14.png" alt="image"> </li>
+</ol>
+]]></content>
+      <categories>
+        <category>Google Assistant</category>
+      </categories>
+      <tags>
+        <tag>Google Assistant</tag>
+        <tag>Voice APP</tag>
+        <tag>教學文件</tag>
+        <tag>baseline</tag>
+        <tag>建立專案</tag>
       </tags>
   </entry>
   <entry>
@@ -247,59 +300,6 @@
       <tags>
         <tag>Google Assistant</tag>
         <tag>Voice APP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第四章 在Google Assistant上試用</title>
-    <url>/blog/2020/11/26/google-assistant-try/</url>
-    <content><![CDATA[<h1 id="踏出第一步：修改對話內容"><a href="#踏出第一步：修改對話內容" class="headerlink" title="踏出第一步：修改對話內容"></a>踏出第一步：修改對話內容</h1><p>首先，點擊進入Default Welcome Intent，並更改系統預設的回應<br><img src="https://hank199599.github.io/assets/img/process15.png" alt="image"> </p>
-<p>刪除多餘的回應，最後只留下一個回應，並將其更改為：<br><strong>「歡迎，你喜歡的顏色是什麼?」</strong><br><img src="https://hank199599.github.io/assets/img/process16.png" alt="image">  </p>
-<h1 id="進入正題，前往Actions-On-Google平台試用"><a href="#進入正題，前往Actions-On-Google平台試用" class="headerlink" title="進入正題，前往Actions On Google平台試用"></a>進入正題，前往Actions On Google平台試用</h1><ol>
-<li>點擊左側選單面板「Intergrations」，<br><img src="https://hank199599.github.io/assets/img/process09.png" alt="image"><br><img src="https://hank199599.github.io/assets/img/process10.png" alt="image"> </li>
-<li><img src="https://hank199599.github.io/assets/img/process11.png" alt="image"> </li>
-<li><img src="https://hank199599.github.io/assets/img/process12.png" alt="image"> </li>
-<li><img src="https://hank199599.github.io/assets/img/process13.png" alt="image"> </li>
-<li><img src="https://hank199599.github.io/assets/img/process14.png" alt="image"> </li>
-</ol>
-]]></content>
-      <categories>
-        <category>Google Assistant</category>
-      </categories>
-      <tags>
-        <tag>Google Assistant</tag>
-        <tag>Voice APP</tag>
-        <tag>教學文件</tag>
-        <tag>baseline</tag>
-        <tag>建立專案</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 基礎學習紀錄與檔案分享</title>
-    <url>/blog/2020/11/15/python-reading-log/</url>
-    <content><![CDATA[<p>藉由 <a href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Colab</a><br>大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。<br>藉由實作書本上的範例程式碼來學習撰寫Python。</p>
-<h2 id="關於書籍"><a href="#關於書籍" class="headerlink" title="關於書籍"></a>關於書籍</h2><p>書本採用Jerry老師推薦的<br><strong>《精通 Python：運用簡單的套件進行現代運算》（第二版）</strong><br>Introducing Python, 2nd Edition  </p>
-<p>作者： Bill Lubanovic<br>譯者： 賴屹民<br>出版社：歐萊禮<br>出版日期：2020/06/02<br>語言：繁體中文  </p>
-<h2 id="章節"><a href="#章節" class="headerlink" title="章節"></a>章節</h2><ul>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter1.ipynb">第一章 初嘗py</a> </li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter2.ipynb">第二章 資料：型態、值、變數與名稱</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter3.ipynb">第三章 數字</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter4.ipynb">第四章 用if來選擇</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter5.ipynb">第五章 文字字串</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter6.ipynb">第六章 用while與for來執行迴圈</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter7.ipynb">第七章 tuple與串列</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter8.ipynb">第八章 字典與集合</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter9.ipynb">第九章 函式</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/Introducing-Python-reading_log/blob/main/Chapter10.ipynb">第十章 喔喔：物件與類別</a></li>
-</ul>
-<h2 id="參與讀書會"><a href="#參與讀書會" class="headerlink" title="參與讀書會"></a>參與讀書會</h2><p>時間：11/10 ~ 1/5<br>如果希望參與線上讀書會，歡迎點擊<a href="https://www.meetup.com/en-AU/TensorFlow-User-Group-Taipei/events/274161446/">Meetup的報名頁面</a></p>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>baseline</tag>
-        <tag>Python</tag>
-        <tag>基礎</tag>
       </tags>
   </entry>
 </search>
