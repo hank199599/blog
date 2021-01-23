@@ -111,14 +111,24 @@
     <content><![CDATA[<p>藉由 <a href="https://colab.research.google.com/notebooks/intro.ipynb#recent=true">Colab</a><br>大幅簡化Python初學者在設定環境以及安裝相關編譯器的時間。<br>藉由實作書本上的範例程式碼來學習撰寫Python。</p>
 <h2 id="關於書籍"><a href="#關於書籍" class="headerlink" title="關於書籍"></a>關於書籍</h2><p>書本採用Jerry老師推薦的<br><strong>《Deep learning 深度學習必讀 - Keras 大神帶你用 Python 實作》</strong><br>Deep Learning with Python</p>
 <p>作者： François Chollet<br>譯者： 葉欣睿<br>出版社：旗標<br>出版日期：2019/05/31<br>語言：繁體中文  </p>
-<h2 id="章節-尚未開始閱讀"><a href="#章節-尚未開始閱讀" class="headerlink" title="章節(尚未開始閱讀)"></a>章節(尚未開始閱讀)</h2><p>Ch01何謂深度學習？<br>1-1 人工智慧、機器學習與深度學習<br>1-2 機器學習的基礎技術：深度學習之前<br>1-3 為什麼是深度學習？為什麼是現在？</p>
-<p>Ch02 開始之前：了解神經網路的數學概念<br>2-1 初探神經網路<br>2-2 神經網路的資料表示法：張量 Tensor<br>2-3 神經網路的工具：張量運算<br>2-4 神經網路的引擎：以梯度為基礎的最佳化<br>2-5 回顧我們的第一個例子</p>
-<p>Ch03 開始使用神經網路<br>3-1 神經網路的核心元件<br>3-2 Keras 簡介<br>3-3 建立一個深度學習的作業環境<br>3-4 二元分類範例：將電影評論分類為正評或負評<br>3-5 分類數位新聞專欄：多類別分類範例<br>3-6 預測房價：迴歸範例</p>
-<p>Ch04 機器學習的基礎知識<br>4-1 機器學習的四個分支<br>4-2 評估機器學習模型<br>4-3 資料預處理 (preprocessing)、特徵工程 (feature engineering) 和特徵學習 (feature learning)<br>4-4 過度配適 (overfitting) 和低度配適 (underfitting)<br>4-5 機器學習的通用工作流程</p>
-<p>Ch05 深度學習實務電腦視覺的深度學習<br>5-1 卷積神經網路 CNN<br>5-2 以少量資料集從頭訓練一個卷積神經網路<br>5-3 使用預先訓練的卷積神經網路<br>5-4 視覺化呈現卷積神經網路學習的內容</p>
-<p>Ch06 應用於文字資料與序列資料的深度學習<br>6-1 文字資料處理<br>6-2 了解循環神經網路<br>6-3 循環神經網路的進階使用方法<br>6-4 使用卷積神經網路進行序列資料處理</p>
-<p>Ch07 進階深度學習的最佳實作方式<br>7-1 超越序列式 (Sequential) 模型：Keras 函數式 API<br>7-2 使用 Keras 回呼 (callbacks) 和 TensorBoard 檢查和監控深度學習模型<br>7-3 模型成效最大化</p>
-<p>Ch08 生成式深度學習<br>8-1 使用 LSTM 產生文字資料<br>8-2 DeepDream<br>8-3 神經風格轉換<br>8-4 使用變分自編碼器 Variational Autoencoders 生成圖像<br>8-5 生成對抗神經網路簡介 Generative Adversarial Network</p>
+<h2 id="章節-尚未開始閱讀"><a href="#章節-尚未開始閱讀" class="headerlink" title="章節(尚未開始閱讀)"></a>章節(尚未開始閱讀)</h2><ul>
+<li><p><a href="https://colab.research.google.com/github/hank199599/deep_learning_keras_log/blob/main/Chapter1.ipynb">Ch01 何謂深度學習？</a></p>
+</li>
+<li><p><a href="https://colab.research.google.com/github/hank199599/deep_learning_keras_log/blob/main/Chapter2.ipynb">Ch02 開始之前：了解神經網路的數學概念</a></p>
+</li>
+<li><p><a href="https://colab.research.google.com/github/hank199599/deep_learning_keras_log/blob/main/Chapter3.ipynb">Ch03 開始使用神經網路</a></p>
+</li>
+<li><p><a href="https://colab.research.google.com/github/hank199599/deep_learning_keras_log/blob/main/Chapter4.ipynb">Ch04 機器學習的基礎知識</a></p>
+</li>
+<li><p><a href="https://colab.research.google.com/github/hank199599/deep_learning_keras_log/blob/main/Chapter5.ipynb">Ch05 深度學習實務電腦視覺的深度學習</a></p>
+</li>
+<li><p><a href="https://colab.research.google.com/github/hank199599/deep_learning_keras_log/blob/main/Chapter6.ipynb">Ch06 應用於文字資料與序列資料的深度學習 </a></p>
+</li>
+<li><p><a href="https://colab.research.google.com/github/hank199599/deep_learning_keras_log/blob/main/Chapter7.ipynb">Ch07 進階深度學習的最佳實作方式</a></p>
+</li>
+<li><p><a href="https://colab.research.google.com/github/hank199599/deep_learning_keras_log/blob/main/Chapter8.ipynb">Ch08 生成式深度學習</a></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -279,15 +289,15 @@
 <li><a href="https://hank199599.github.io/blog/2020/11/17/actions-on-google-project-create/">第二章 建立Action on Google專案</a></li>
 <li><a href="https://hank199599.github.io/blog/2020/11/19/dialogflow-project-create/">第三章 建立Dialogflow 專案</a></li>
 <li><a href="https://hank199599.github.io/blog/2020/11/26/google-assistant-try/">第四章 在Google Assistant上試用</a></li>
-<li><a href="">第五章 撰寫 DialogFlow  Fulfillment</a></li>
-<li><a href="">第六章 介紹 Node.js 與 NPM套件</a></li>
-<li><a href="">第七章 在本地端撰寫 Fulfillment</a></li>
-<li><a href="">第八章 建立Firebase專案</a></li>
-<li><a href="">第九章 部屬Function到Firebase</a></li>
-<li><a href="">第十章 簡介API</a></li>
-<li><a href="">第十一章 async function</a></li>
-<li><a href="">第十二章 Promise</a></li>
-<li><a href="">第十三章 設計對話流</a></li>
+<li><a href="https://hank199599.github.io/blog/2021/01/23/brief-talk-voice-user-interface">第五章 淺談語音對話介面</a></li>
+<li><a href="https://hank199599.github.io/blog/2021/01/23/design-conversation-flow">第六章 設計對話流</a></li>
+<li><a href="https://hank199599.github.io/blog/2021/01/23/nodejs-and-javascript">第七章 介紹 Node.js 與 NPM套件</a></li>
+<li><a href="https://hank199599.github.io/blog/2021/01/23/write-dialogflow-fulfillment">第八章 撰寫 DialogFlow  Fulfillment</a></li>
+<li><a href="">第九章 在本地端撰寫 Fulfillment</a></li>
+<li><a href="">第十章 建立Firebase專案</a></li>
+<li><a href="">第十一章 部屬Function到Firebase</a></li>
+<li><a href="">第十二章 async function</a></li>
+<li><a href="">第十三章 Promise</a></li>
 <li><a href="">第十四章 發布第一支作品</a></li>
 <li><a href="">第十五章 設計多語言交互</a></li>
 <li><a href="">第十六章 設計對話介面</a></li>
@@ -303,9 +313,85 @@
       </tags>
   </entry>
   <entry>
-    <title>第五章 撰寫 DialogFlow  Fulfillment</title>
+    <title>第八章 撰寫 DialogFlow  Fulfillment</title>
     <url>/blog/2021/01/23/write-dialogflow-fulfillment/</url>
+    <content><![CDATA[<h1 id="開啟內建編輯器"><a href="#開啟內建編輯器" class="headerlink" title="開啟內建編輯器"></a>開啟內建編輯器</h1><h1 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h1><h2 id="供參考的Github原始碼"><a href="#供參考的Github原始碼" class="headerlink" title="供參考的Github原始碼"></a>供參考的Github原始碼</h2>]]></content>
+      <categories>
+        <category>Google Assistant</category>
+      </categories>
+      <tags>
+        <tag>Google Assistant</tag>
+        <tag>Voice APP</tag>
+        <tag>教學文件</tag>
+        <tag>baseline</tag>
+        <tag>建立專案</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第五章 淺談語音對話介面</title>
+    <url>/blog/2021/01/23/brief-talk-voice-user-interface/</url>
+    <content><![CDATA[<h1 id="語音對話介面-Voice-User-Interface"><a href="#語音對話介面-Voice-User-Interface" class="headerlink" title="語音對話介面 (Voice User Interface)"></a>語音對話介面 (Voice User Interface)</h1><ul>
+<li>單輪對話：一問一答就結束對話</li>
+<li>多輪對話：一問一答的同時衍生出新的問題和新的回答，從而無限接近用戶的真實訴求</li>
+</ul>
+<p><strong>傳統的語音互動都是單輪對話，而隨着技術的發展，多輪對話成爲語音互動的趨勢。</strong>  </p>
+<h1 id="VUI設計工具"><a href="#VUI設計工具" class="headerlink" title="VUI設計工具"></a>VUI設計工具</h1><ul>
+<li><p>示例對話：爲VUI挑選最常見的使用場景，爲這些場景寫一系列最優路徑的示例對話以及異常情況的示例對話。</p>
+</li>
+<li><p>視覺原型圖：視覺原型圖可將用戶體驗可視化，結合VUI，讓用戶產生更完整的視聽體驗。</p>
+</li>
+<li><p>流程圖：設計使用者在與其互動時的操作的可能流程</p>
+</li>
+</ul>
+<h1 id="設計概念"><a href="#設計概念" class="headerlink" title="設計概念"></a>設計概念</h1><p>確定策略：<strong>控制式</strong>還是<strong>對話式</strong>。<br>確認策略時可參考：</p>
+<ol>
+<li>錯誤的後果是什麼？</li>
+<li>系統將以什麼形式進行反饋？</li>
+<li>以什麼形式來確認？</li>
+</ol>
+<p>命令：控制模式、對話模式</p>
+<p>目前主流的是命令控制模式，而隨着AI的發展，更流暢自然的輪流對話設計模式將變得更普遍。控制模式最簡單的例子是，當我們要和Siri對話時，我們必須長按Home鍵（push-to-talk），纔可喚醒Siri。而對話模式則不會有控制鍵告訴機器用戶要開始說話了，而是用更自然的對話技巧進行話輪轉換；比如問一個問題，使用眼神交流，給出明確的提示等…… 需要強調的是不要強迫用戶在不合適的情況下進行話輪轉換。讓VUI更加人性化或更具吸引力的方式是使用對話標識。對話標識能對用戶的信息有正面反饋，或者是提問前讓用戶能有所預期。對話標識包括：時間線、接受回饋、積極反饋等</p>
+<p>置信度閾值：VUI主要通過語音來反饋結果，確認信息對於體驗非常重要，要做到這一點需要使用置信度閾值。使用三級置信度時，系統將一定的閾值內以明確的形式確認信息，若是信息置信度小於45％，則系統會通過顯性確認信息。若是信息置信度大於80％，則系統將以隱性置信度來確認。</p>
+<p>顯性確認：需要強制用戶確認信息，比如是否確定支付某一筆金額時，必須用戶確認纔可以，而且必須留有歷史語音記錄。</p>
+<p>隱性確認：用戶只需要接受信息，但無需強制確認，若是隱性確認，則允許用戶撤銷；</p>
+<p>非語言式確認：僅需行動反饋，無需口頭響應。就比如你說“打開窗簾”，此時智能家居系統就直接把窗簾打開了，無需再經過語音系統來反覆確認。另外非語言式確認包含了特定音樂來反饋結果，比如洗衣機洗完衣服，會用一段美妙的音樂告知用戶…..</p>
+<p>通用確認：通用確認並不需要用戶確認具體項目，而是開放式的聊天，從中我們可以瞭解用戶的心情和狀態等。這類反饋需要一些通用性的回答。</p>
+<p>視覺確認：通常用戶一次性不能記住超過大約7個聽覺項目，語音交互稍縱即逝，對於用戶的認知提出了新挑戰，可視化列表可降低用戶的認知難度。使用屏幕的另一個好處，我們能讓用戶快速確認某一件事情，但語音確認就會遇到置信度閾值問題。</p>
+<p>異常處理：語音交互因環境噪聲或用戶聲音的輕重，都有可能導致系統出錯，VUI出錯的情況有：未檢測到語音信息；檢測到了語音，但未識別出結果；語音被正確識別了，但系統不能處理這些信息的反饋；部分語音信息識別出錯。</p>
+<p>記錄對話的上下文，爲後續的語音輸出提供信息和線索。儘量多的記錄用戶和語音的交互信息，這些信息可以幫助系統瞭解用戶是誰，以及用戶的一些角色行爲特徵。</p>
+<h1 id="內容出處"><a href="#內容出處" class="headerlink" title="內容出處"></a>內容出處</h1><p><a href="https://www.twblogs.net/a/5d3def93bd9eee51742258b9">淺談語音交互界面設計</a></p>
+]]></content>
+      <categories>
+        <category>Google Assistant</category>
+      </categories>
+      <tags>
+        <tag>Google Assistant</tag>
+        <tag>Voice APP</tag>
+        <tag>教學文件</tag>
+        <tag>baseline</tag>
+        <tag>建立專案</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第六章 設計對話流</title>
+    <url>/blog/2021/01/23/design-conversation-flow/</url>
     <content><![CDATA[]]></content>
+      <categories>
+        <category>Google Assistant</category>
+      </categories>
+      <tags>
+        <tag>Google Assistant</tag>
+        <tag>Voice APP</tag>
+        <tag>教學文件</tag>
+        <tag>baseline</tag>
+        <tag>建立專案</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第七章 介紹 Node.js 與 NPM套件</title>
+    <url>/blog/2021/01/23/nodejs-and-javascript/</url>
+    <content><![CDATA[<h1 id="Node-js-基礎"><a href="#Node-js-基礎" class="headerlink" title="Node.js 基礎"></a>Node.js 基礎</h1><p><img src="https://miro.medium.com/max/963/1*yYN3pRB9mGS-IG_-agqDvA.png" alt="pic-1"><br>簡而言之，這是一種用於服務器端編程的JavaScript免費開放源代碼跨平台，<br>可讓用戶快速構建網絡應用程序。<br>如果你沒有接觸過程式語言，或對於JavaScript不太熟悉。<br>可以參考這個<a href="https://www.nodebeginner.org/index-zh-tw.html">網路電子書</a>的教學。</p>
+]]></content>
       <categories>
         <category>Google Assistant</category>
       </categories>
