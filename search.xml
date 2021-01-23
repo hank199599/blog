@@ -143,7 +143,7 @@
 <li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter6.ipynb">第6章 機率</a></li>
 <li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter7.ipynb">第7章 假設與推論</a></li>
 <li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter8.ipynb">第8章 梯度遞減</a></li>
-<li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter9.ipynb">第9章 取得數據資料</a></li>
+<li>第9章 取得數據資料</li>
 <li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter10.ipynb">第10章 處理數據資料</a></li>
 <li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter11.ipynb">第11章 機器學習</a></li>
 <li><a href="https://colab.research.google.com/github/hank199599/data_science_from_scratch_reading_log/blob/main/Chapter12.ipynb">第12章 k最近鄰</a></li>
@@ -300,6 +300,21 @@
       <tags>
         <tag>Google Assistant</tag>
         <tag>Voice APP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第五章 撰寫 DialogFlow  Fulfillment</title>
+    <url>/blog/2021/01/23/write-dialogflow-fulfillment/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Google Assistant</category>
+      </categories>
+      <tags>
+        <tag>Google Assistant</tag>
+        <tag>Voice APP</tag>
+        <tag>教學文件</tag>
+        <tag>baseline</tag>
+        <tag>建立專案</tag>
       </tags>
   </entry>
 </search>
