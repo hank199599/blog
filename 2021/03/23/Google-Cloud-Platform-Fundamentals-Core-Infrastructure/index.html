@@ -20,22 +20,20 @@
     var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="語音對話介面 (Voice User Interface,VUI) 單輪對話：一問一答就結束對話 多輪對話：一問一答的同時衍生出新的問題和新的回答，從而無限接近用戶的真實訴求  傳統的語音互動都是單輪對話，而隨着技術的發展，多輪對話成爲語音互動的趨勢。   設計工具 示例對話：爲VUI挑選最常見的使用場景，爲這些場景寫一系列最優路徑的示例對話以及異常情況的示例對話。  視覺原型圖：視覺原型圖可將用">
+  <meta name="description" content="Virtualized data centers IaaS (基礎架構作為服務) ：類似於資料中心 Hybrid PaaS(platform as a service)：將程式代碼運算邏輯雲端化 Serverless logic Automated elastic resources  GCP regions and zones層級 Multi-Region Region Zone  Zone定義">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第五章 淺談語音對話介面">
-<meta property="og:url" content="https://hank199599.github.io/blog/2021/01/23/brief-talk-voice-user-interface/index.html">
+<meta property="og:title" content="Google Cloud Platform Fundamentals: Core Infrastructure">
+<meta property="og:url" content="https://hank199599.github.io/blog/2021/03/23/Google-Cloud-Platform-Fundamentals-Core-Infrastructure/index.html">
 <meta property="og:site_name" content="隨筆部落格">
-<meta property="og:description" content="語音對話介面 (Voice User Interface,VUI) 單輪對話：一問一答就結束對話 多輪對話：一問一答的同時衍生出新的問題和新的回答，從而無限接近用戶的真實訴求  傳統的語音互動都是單輪對話，而隨着技術的發展，多輪對話成爲語音互動的趨勢。   設計工具 示例對話：爲VUI挑選最常見的使用場景，爲這些場景寫一系列最優路徑的示例對話以及異常情況的示例對話。  視覺原型圖：視覺原型圖可將用">
+<meta property="og:description" content="Virtualized data centers IaaS (基礎架構作為服務) ：類似於資料中心 Hybrid PaaS(platform as a service)：將程式代碼運算邏輯雲端化 Serverless logic Automated elastic resources  GCP regions and zones層級 Multi-Region Region Zone  Zone定義">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-01-23T10:32:46.000Z">
-<meta property="article:modified_time" content="2021-01-24T03:26:07.002Z">
+<meta property="article:published_time" content="2021-03-23T01:17:34.000Z">
+<meta property="article:modified_time" content="2021-03-24T02:35:00.110Z">
 <meta property="article:author" content="Hank Yu">
-<meta property="article:tag" content="Google Assistant">
-<meta property="article:tag" content="Voice APP">
-<meta property="article:tag" content="對話流">
+<meta property="article:tag" content="Google Cloud">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://hank199599.github.io/blog/2021/01/23/brief-talk-voice-user-interface/">
+<link rel="canonical" href="https://hank199599.github.io/blog/2021/03/23/Google-Cloud-Platform-Fundamentals-Core-Infrastructure/">
 
 
 <script id="page-configurations">
@@ -48,7 +46,7 @@
   };
 </script>
 
-  <title>第五章 淺談語音對話介面 | 隨筆部落格</title>
+  <title>Google Cloud Platform Fundamentals: Core Infrastructure | 隨筆部落格</title>
   
 
 
@@ -199,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2021/01/23/brief-talk-voice-user-interface/">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2021/03/23/Google-Cloud-Platform-Fundamentals-Core-Infrastructure/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog_pic.jpg">
@@ -212,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          第五章 淺談語音對話介面
+          Google Cloud Platform Fundamentals: Core Infrastructure
         </h1>
 
         <div class="post-meta">
@@ -222,14 +220,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2021-01-23 18:32:46" itemprop="dateCreated datePublished" datetime="2021-01-23T18:32:46+08:00">2021-01-23</time>
+              <time title="創建時間：2021-03-23 09:17:34" itemprop="dateCreated datePublished" datetime="2021-03-23T09:17:34+08:00">2021-03-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-01-24 11:26:07" itemprop="dateModified" datetime="2021-01-24T11:26:07+08:00">2021-01-24</time>
+                <time title="修改時間：2021-03-24 10:35:00" itemprop="dateModified" datetime="2021-03-24T10:35:00+08:00">2021-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,11 +235,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Google-Assistant/" itemprop="url" rel="index"><span itemprop="name">Google Assistant</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Google-Assistant/%E8%AA%9E%E9%9F%B3%E4%BD%BF%E7%94%A8%E8%80%85%E4%BB%8B%E9%9D%A2/" itemprop="url" rel="index"><span itemprop="name">語音使用者介面</span></a>
+                  <a href="/blog/categories/Google-Cloud-Platform/" itemprop="url" rel="index"><span itemprop="name">Google Cloud Platform</span></a>
                 </span>
             </span>
 
@@ -263,50 +257,67 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="語音對話介面-Voice-User-Interface-VUI"><a href="#語音對話介面-Voice-User-Interface-VUI" class="headerlink" title="語音對話介面 (Voice User Interface,VUI)"></a>語音對話介面 (Voice User Interface,VUI)</h1><ul>
-<li>單輪對話：一問一答就結束對話</li>
-<li>多輪對話：一問一答的同時衍生出新的問題和新的回答，從而無限接近用戶的真實訴求</li>
+        <h1 id="Virtualized-data-centers"><a href="#Virtualized-data-centers" class="headerlink" title="Virtualized data centers"></a>Virtualized data centers</h1><ul>
+<li>IaaS (基礎架構作為服務) ：類似於資料中心</li>
+<li>Hybrid</li>
+<li>PaaS(platform as a service)：將程式代碼運算邏輯雲端化</li>
+<li>Serverless logic</li>
+<li>Automated elastic resources</li>
 </ul>
-<p><strong>傳統的語音互動都是單輪對話，而隨着技術的發展，多輪對話成爲語音互動的趨勢。</strong>  </p>
-<h1 id="設計工具"><a href="#設計工具" class="headerlink" title="設計工具"></a>設計工具</h1><ul>
-<li><p>示例對話：爲VUI挑選最常見的使用場景，爲這些場景寫一系列最優路徑的示例對話以及異常情況的示例對話。</p>
-</li>
-<li><p>視覺原型圖：視覺原型圖可將用戶體驗可視化，結合VUI，讓用戶產生更完整的視聽體驗。</p>
-</li>
-<li><p>流程圖：設計使用者在與其互動時的操作的可能流程</p>
-</li>
-</ul>
-<h1 id="設計概念"><a href="#設計概念" class="headerlink" title="設計概念"></a>設計概念</h1><p>確定策略：<strong>控制式</strong>還是<strong>對話式</strong>。<br>確認策略時可參考：</p>
-<ol>
-<li>錯誤的後果是什麼？</li>
-<li>系統將以什麼形式進行反饋？</li>
-<li>以什麼形式來確認？</li>
+<h1 id="GCP-regions-and-zones"><a href="#GCP-regions-and-zones" class="headerlink" title="GCP regions and zones"></a>GCP regions and zones</h1><h2 id="層級"><a href="#層級" class="headerlink" title="層級"></a>層級</h2><ol>
+<li>Multi-Region</li>
+<li>Region</li>
+<li>Zone</li>
 </ol>
-<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ul>
-<li>控制模式：透過特定按鍵呼叫語音助理</li>
-<li>對話模式：使用更自然的對話技巧進行話輪轉換</li>
+<h2 id="Zone定義"><a href="#Zone定義" class="headerlink" title="Zone定義"></a>Zone定義</h2><ul>
+<li>zone doesn’t always correspond to a single physical building. </li>
+<li>All the zones within a region have fast network connectivity among them.</li>
+<li>Zones are grouped into regions, independent geographic areas</li>
 </ul>
-<h1 id="置信度閾值"><a href="#置信度閾值" class="headerlink" title="置信度閾值"></a>置信度閾值</h1><p>VUI主要通過語音來反饋結果，確認訊息對於體驗非常重要，要做到這一點需要使用置信度閾值。使用三級置信度時，系統將一定的閾值內以明確的形式確認訊息，若是訊息置信度小於45％，則系統會通過顯性確認訊息。若是訊息置信度大於80％，則系統將以隱性置信度來確認。</p>
-<h1 id="確認方式"><a href="#確認方式" class="headerlink" title="確認方式"></a>確認方式</h1><ul>
-<li><p>顯性確認：需要<strong>強制</strong>用戶確認訊息</p>
-</li>
-<li><p>隱性確認：用戶只需要接受訊息，但無需強制確認</p>
-</li>
-<li><p>非語言式確認：僅需行動反饋，無需口頭響應。例如：「打開窗簾」</p>
-</li>
-<li><p>通用確認：通用確認並不需要用戶確認具體項目，而是開放式的聊天，從中我們可以瞭解用戶的心情和狀態等。這類反饋需要一些通用性的回答。</p>
-</li>
-<li><p>視覺確認：使用螢幕讓用戶快速確認某件事情</p>
-</li>
+<h1 id="Virtual-Private-Cloud-VPC-Network"><a href="#Virtual-Private-Cloud-VPC-Network" class="headerlink" title="Virtual Private Cloud (VPC) Network"></a>Virtual Private Cloud (VPC) Network</h1><ul>
+<li>have region and global scale</li>
+<li> If you increase the size of a subnet in a custom VPC network, the IP addresses of virtual machines already on that subnet might be affected.</li>
 </ul>
-<h1 id="異常處理"><a href="#異常處理" class="headerlink" title="異常處理"></a>異常處理</h1><p>因環境噪聲或用戶聲音的輕重，導致系統出錯。<br>出錯的情況有：</p>
+<h1 id="Compute-Engine"><a href="#Compute-Engine" class="headerlink" title="Compute Engine"></a>Compute Engine</h1><ul>
+<li>virtual machine type</li>
+<li>standard</li>
+<li>SSD</li>
+<li>OS</li>
+<li>Preemptible VM:可以依據需求暫停虛擬機來節省花費</li>
+</ul>
+<h1 id="Cloud-Load-Balancing"><a href="#Cloud-Load-Balancing" class="headerlink" title="Cloud Load Balancing"></a>Cloud Load Balancing</h1><p>is a fully distributed, software-defined managed service for all your traffic.</p>
+<h1 id="Google-VPC-networks-and-subnets"><a href="#Google-VPC-networks-and-subnets" class="headerlink" title="Google VPC networks and subnets"></a>Google VPC networks and subnets</h1><ul>
+<li>networks : global scope</li>
+<li>subnets  : regional scope</li>
+</ul>
+<p>You can dynamically increase the size of a subnet in a custom network by expanding the range of IP addresses allocated to it. Doing that doesn’t affect already configured VMs.</p>
+<h2 id="consistent"><a href="#consistent" class="headerlink" title="consistent"></a>consistent</h2><ul>
+<li>routing tables : forward traffic from one instance to another instance within the same network</li>
+<li>global distributed firewall : You can control to restrict access to instances, both incoming and outgoing traffic</li>
+</ul>
+<h2 id="Cloud-Load-Balancing-options"><a href="#Cloud-Load-Balancing-options" class="headerlink" title="Cloud Load Balancing options"></a>Cloud Load Balancing options</h2><p>a fully distributed, software-defined managed service for all your traffic. </p>
 <ul>
-<li>未檢測到語音訊息；檢測到了語音，但未識別出結果</li>
-<li>語音被正確識別了，但系統不能處理這些訊息的反饋</li>
-<li>部分語音訊息識別出錯。</li>
+<li>Global HTTP : can routr different URLs to different back ends</li>
+<li>GLobal SSL Proxy : Suppoerted on specific port numbers</li>
+<li>Global TCP Proxy : Supported on specific port numbers</li>
+<li>Regional : Supported on any port number</li>
+<li>Regional internal</li>
 </ul>
-<h1 id="內容出處"><a href="#內容出處" class="headerlink" title="內容出處"></a>內容出處</h1><p><a target="_blank" rel="noopener" href="https://www.twblogs.net/a/5d3def93bd9eee51742258b9">淺談語音交互界面設計</a></p>
-
+<h2 id="VPC-selection"><a href="#VPC-selection" class="headerlink" title="VPC selection"></a>VPC selection</h2><ul>
+<li><p>VPC Peering : establish a peering relationship between two VPCs so that they can exchange traffic</p>
+</li>
+<li><p>Shared VPC : full power of IAM to control who and what in one project can interact with a VPC in another</p>
+</li>
+</ul>
+<h2 id="Interconnection-options"><a href="#Interconnection-options" class="headerlink" title="Interconnection options"></a>Interconnection options</h2><p>Peering traffic (traffic flowing between peered networks) </p>
+<ul>
+<li>VPN</li>
+<li>Direct Peering</li>
+<li>Carrier Peering</li>
+<li>Dedirected Interconnect : 建立與Google的加密直接連線</li>
+</ul>
+<h1 id="Cloud-storage"><a href="#Cloud-storage" class="headerlink" title="Cloud storage"></a>Cloud storage</h1><p>Different applications and workloads required different storage database solutions</p>
+<h2 id="Cloud-Storage"><a href="#Cloud-Storage" class="headerlink" title="Cloud Storage"></a>Cloud Storage</h2><h2 id="Cloud-SQL"><a href="#Cloud-SQL" class="headerlink" title="Cloud SQL"></a>Cloud SQL</h2><h2 id="Cloud-Spanner"><a href="#Cloud-Spanner" class="headerlink" title="Cloud Spanner"></a>Cloud Spanner</h2><h2 id="Cloud-Data-Store"><a href="#Cloud-Data-Store" class="headerlink" title="Cloud Data Store"></a>Cloud Data Store</h2><h2 id="Google-Big-Table"><a href="#Google-Big-Table" class="headerlink" title="Google Big Table"></a>Google Big Table</h2>
     </div>
 
     
@@ -352,9 +363,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/Google-Assistant/" rel="tag"># Google Assistant</a>
-              <a href="/blog/tags/Voice-APP/" rel="tag"># Voice APP</a>
-              <a href="/blog/tags/%E5%B0%8D%E8%A9%B1%E6%B5%81/" rel="tag"># 對話流</a>
+              <a href="/blog/tags/Google-Cloud/" rel="tag"># Google Cloud</a>
           </div>
 
         
@@ -363,13 +372,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2021/01/23/write-dialogflow-fulfillment/" rel="prev" title="第八章 撰寫 DialogFlow  Fulfillment">
-      <i class="fa fa-chevron-left"></i> 第八章 撰寫 DialogFlow  Fulfillment
+    <a href="/blog/2021/02/27/build-firebase-project/" rel="prev" title="第九章 建立Firebase專案">
+      <i class="fa fa-chevron-left"></i> 第九章 建立Firebase專案
     </a></div>
-      <div class="post-nav-item">
-    <a href="/blog/2021/01/23/design-conversation-flow/" rel="next" title="第六章 設計對話流">
-      第六章 設計對話流 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -428,7 +434,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AA%9E%E9%9F%B3%E5%B0%8D%E8%A9%B1%E4%BB%8B%E9%9D%A2-Voice-User-Interface-VUI"><span class="nav-number">1.</span> <span class="nav-text">語音對話介面 (Voice User Interface,VUI)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88%E5%B7%A5%E5%85%B7"><span class="nav-number">2.</span> <span class="nav-text">設計工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88%E6%A6%82%E5%BF%B5"><span class="nav-number">3.</span> <span class="nav-text">設計概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%AE%E4%BF%A1%E5%BA%A6%E9%96%BE%E5%80%BC"><span class="nav-number">5.</span> <span class="nav-text">置信度閾值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A2%BA%E8%AA%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">確認方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%95%B0%E5%B8%B8%E8%99%95%E7%90%86"><span class="nav-number">7.</span> <span class="nav-text">異常處理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A7%E5%AE%B9%E5%87%BA%E8%99%95"><span class="nav-number">8.</span> <span class="nav-text">內容出處</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Virtualized-data-centers"><span class="nav-number">1.</span> <span class="nav-text">Virtualized data centers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GCP-regions-and-zones"><span class="nav-number">2.</span> <span class="nav-text">GCP regions and zones</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%A4%E7%B4%9A"><span class="nav-number">2.1.</span> <span class="nav-text">層級</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zone%E5%AE%9A%E7%BE%A9"><span class="nav-number">2.2.</span> <span class="nav-text">Zone定義</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Virtual-Private-Cloud-VPC-Network"><span class="nav-number">3.</span> <span class="nav-text">Virtual Private Cloud (VPC) Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Compute-Engine"><span class="nav-number">4.</span> <span class="nav-text">Compute Engine</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-Load-Balancing"><span class="nav-number">5.</span> <span class="nav-text">Cloud Load Balancing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Google-VPC-networks-and-subnets"><span class="nav-number">6.</span> <span class="nav-text">Google VPC networks and subnets</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#consistent"><span class="nav-number">6.1.</span> <span class="nav-text">consistent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Load-Balancing-options"><span class="nav-number">6.2.</span> <span class="nav-text">Cloud Load Balancing options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPC-selection"><span class="nav-number">6.3.</span> <span class="nav-text">VPC selection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interconnection-options"><span class="nav-number">6.4.</span> <span class="nav-text">Interconnection options</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-storage"><span class="nav-number">7.</span> <span class="nav-text">Cloud storage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Storage"><span class="nav-number">7.1.</span> <span class="nav-text">Cloud Storage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-SQL"><span class="nav-number">7.2.</span> <span class="nav-text">Cloud SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Spanner"><span class="nav-number">7.3.</span> <span class="nav-text">Cloud Spanner</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Data-Store"><span class="nav-number">7.4.</span> <span class="nav-text">Cloud Data Store</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google-Big-Table"><span class="nav-number">7.5.</span> <span class="nav-text">Google Big Table</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
