@@ -650,7 +650,25 @@
 <li>Dedirected Interconnect : 建立與Google的加密直接連線</li>
 </ul>
 <h1 id="Cloud-storage"><a href="#Cloud-storage" class="headerlink" title="Cloud storage"></a>Cloud storage</h1><p>Different applications and workloads required different storage database solutions</p>
-<h2 id="Cloud-Storage"><a href="#Cloud-Storage" class="headerlink" title="Cloud Storage"></a>Cloud Storage</h2><h2 id="Cloud-SQL"><a href="#Cloud-SQL" class="headerlink" title="Cloud SQL"></a>Cloud SQL</h2><h2 id="Cloud-Spanner"><a href="#Cloud-Spanner" class="headerlink" title="Cloud Spanner"></a>Cloud Spanner</h2><h2 id="Cloud-Data-Store"><a href="#Cloud-Data-Store" class="headerlink" title="Cloud Data Store"></a>Cloud Data Store</h2><h2 id="Google-Big-Table"><a href="#Google-Big-Table" class="headerlink" title="Google Big Table"></a>Google Big Table</h2>]]></content>
+<h2 id="Cloud-Storage-一種object-storage"><a href="#Cloud-Storage-一種object-storage" class="headerlink" title="Cloud Storage: 一種object storage"></a>Cloud Storage: 一種object storage</h2><ul>
+<li>上傳後會被系統賦予一個唯一的索引值，並以buckets的形式儲存</li>
+<li>用系統給予的唯一鍵值(key)來索引資料，url形式索引</li>
+<li>但不被歸類為File Syetem ★</li>
+<li>檔案被上傳後是不可編輯的，但可以透過上傳功能來更新檔案</li>
+</ul>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 開啟版本管理：可以切換上傳的檔案版本</li>
+<li><input disabled="" type="checkbox"> 沒打開版本管理：舊版會無條件被新版替代</li>
+</ul>
+<ul>
+<li>在伺服器端會被自動加密且無須花費</li>
+<li>Access Control Lists : 提供尋找檔案權限管理</li>
+<li>Life cycle management policy :</li>
+<li>排程檔案將被刪除的時間</li>
+<li>篩選並刪除某一時間點上傳的檔案</li>
+<li>篩選並留下最近上傳的檔案版本</li>
+</ul>
+<h2 id="Cloud-SQL"><a href="#Cloud-SQL" class="headerlink" title="Cloud SQL"></a>Cloud SQL</h2><h2 id="Cloud-Spanner"><a href="#Cloud-Spanner" class="headerlink" title="Cloud Spanner"></a>Cloud Spanner</h2><h2 id="Cloud-Data-Store"><a href="#Cloud-Data-Store" class="headerlink" title="Cloud Data Store"></a>Cloud Data Store</h2><h2 id="Google-Big-Table"><a href="#Google-Big-Table" class="headerlink" title="Google Big Table"></a>Google Big Table</h2>]]></content>
       <categories>
         <category>Google Cloud Platform</category>
       </categories>
