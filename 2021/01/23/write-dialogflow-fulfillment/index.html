@@ -27,17 +27,17 @@
 <meta property="og:site_name" content="隨筆部落格">
 <meta property="og:description" content="在了解簡易的JavaScript開發流程後，我們要開始編寫第一個能夠利用邏輯判斷的Untent了! 在開始前：為何要採用Fulfillment來撰寫回應?在Dialogflow上，我們能做的設計被侷限在單純的回應。無法進行更進一步的互動，像是：    執行邏輯判斷 抓取API 存取Database Bullet five  因此，透過接入Fulfillment。能使回應之設計更具多樣性，達到更貼近">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%969.png">
-<meta property="og:image" content="https://hank199599.github.io/assets/img/process30.png">
-<meta property="og:image" content="https://hank199599.github.io/assets/img/process31.png">
-<meta property="og:image" content="https://hank199599.github.io/assets/img/process32.png">
-<meta property="og:image" content="https://hank199599.github.io/assets/img/process33.png">
-<meta property="og:image" content="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%968.png">
-<meta property="og:image" content="https://hank199599.github.io/assets/img/process34.png">
-<meta property="og:image" content="https://hank199599.github.io/assets/img/process35.png">
-<meta property="og:image" content="https://hank199599.github.io/assets/img/process36.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%969.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process30.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process31.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process32.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process33.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%968.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process34.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process35.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process36.png">
 <meta property="article:published_time" content="2021-01-23T10:01:58.000Z">
-<meta property="article:modified_time" content="2021-02-18T03:24:14.091Z">
+<meta property="article:modified_time" content="2021-04-04T05:18:20.865Z">
 <meta property="article:author" content="Hank Yu">
 <meta property="article:tag" content="Google Assistant">
 <meta property="article:tag" content="Voice APP">
@@ -45,7 +45,7 @@
 <meta property="article:tag" content="baseline">
 <meta property="article:tag" content="建立專案">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%969.png">
+<meta name="twitter:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%969.png">
 
 <link rel="canonical" href="https://hank199599.github.io/blog/2021/01/23/write-dialogflow-fulfillment/">
 
@@ -214,7 +214,7 @@
     <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2021/01/23/write-dialogflow-fulfillment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog_pic.jpg">
+      <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
       <meta itemprop="name" content="Hank Yu">
       <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
     </span>
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-02-18 11:24:14" itemprop="dateModified" datetime="2021-02-18T11:24:14+08:00">2021-02-18</time>
+                <time title="修改時間：2021-04-04 13:18:20" itemprop="dateModified" datetime="2021-04-04T13:18:20+08:00">2021-04-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,23 +280,23 @@
 <li>Bullet five</li>
 </ol>
 <p>因此，透過接入Fulfillment。<br>能使回應之設計更具多樣性，達到更貼近一般生活上的對話互動。</p>
-<p><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%969.png" alt="image"> </p>
+<p><img src="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%969.png" alt="image"> </p>
 <h1 id="開啟內建編輯器"><a href="#開啟內建編輯器" class="headerlink" title="開啟內建編輯器"></a>開啟內建編輯器</h1><ol>
-<li><p>首先，前往「Fulfillment」分頁。<br>開啟Inline Editor的功能，我們將透過他於GCP上建立雲端函式。<br>並以此撰寫程式來客製化回應。<br><img src="https://hank199599.github.io/assets/img/process30.png" alt="image">  </p>
+<li><p>首先，前往「Fulfillment」分頁。<br>開啟Inline Editor的功能，我們將透過他於GCP上建立雲端函式。<br>並以此撰寫程式來客製化回應。<br><img src="https://hank199599.github.io/assets/img/blog/process30.png" alt="image">  </p>
 </li>
-<li><p>開啟該功能後，系統會提示需要啟用GCP的付費功能。<br>請點擊「OPEN CLOUD CONSOLE」繼續操作。<br><img src="https://hank199599.github.io/assets/img/process31.png" alt="image"> </p>
+<li><p>開啟該功能後，系統會提示需要啟用GCP的付費功能。<br>請點擊「OPEN CLOUD CONSOLE」繼續操作。<br><img src="https://hank199599.github.io/assets/img/blog/process31.png" alt="image"> </p>
 </li>
-<li><p>跟著系統的導引建立帳單帳戶，並將其綁訂到這個專案上<br><img src="https://hank199599.github.io/assets/img/process32.png" alt="image"> </p>
+<li><p>跟著系統的導引建立帳單帳戶，並將其綁訂到這個專案上<br><img src="https://hank199599.github.io/assets/img/blog/process32.png" alt="image"> </p>
 </li>
-<li><p>現在，你已經成功開啟我們所需要的雲端編輯器啦!<br><img src="https://hank199599.github.io/assets/img/process33.png" alt="image"> </p>
+<li><p>現在，你已經成功開啟我們所需要的雲端編輯器啦!<br><img src="https://hank199599.github.io/assets/img/blog/process33.png" alt="image"> </p>
 </li>
 </ol>
-<h1 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h1><p><img src="https://hank199599.github.io/assets/img/%E7%A4%BA%E6%84%8F%E5%9C%968.png" alt="image"> </p>
+<h1 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h1><p><img src="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%968.png" alt="image"> </p>
 <p>依照我們先前所提及的架構。<br>來客製化我們先前要設計的對話。  </p>
 <h2 id="供參考的Github原始碼"><a href="#供參考的Github原始碼" class="headerlink" title="供參考的Github原始碼"></a>供參考的Github原始碼</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Import the Dialogflow module from the Actions on Google client library.</span></span><br><span class="line"><span class="keyword">const</span> &#123;dialogflow&#125; = <span class="built_in">require</span>(<span class="string">&#x27;actions-on-google&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Import the firebase-functions package for deployment.</span></span><br><span class="line"><span class="keyword">const</span> functions = <span class="built_in">require</span>(<span class="string">&#x27;firebase-functions&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Instantiate the Dialogflow client.</span></span><br><span class="line"><span class="keyword">const</span> app = dialogflow(&#123;<span class="attr">debug</span>: <span class="literal">true</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Handle the Dialogflow intent named &#x27;favorite color&#x27;.</span></span><br><span class="line"><span class="comment">// The intent collects a parameter named &#x27;color&#x27;.</span></span><br><span class="line">app.intent(<span class="string">&#x27;用戶輸入的顏色&#x27;</span>, <span class="function">(<span class="params">conv, &#123;color&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// Respond with the specific response and end the conversation.</span></span><br><span class="line">	<span class="function"><span class="title">if</span>(<span class="params">color===<span class="string">&quot;綠色&quot;</span></span>)</span>&#123;conv.close(<span class="string">&#x27;綠光戰警?&#x27;</span>);&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="function"><span class="title">if</span>(<span class="params">color===<span class="string">&quot;紅色&quot;</span></span>)</span>&#123;conv.close(<span class="string">&#x27;感覺充滿喜氣&#x27;</span>);&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="function"><span class="title">if</span>(<span class="params">color===<span class="string">&quot;藍色&quot;</span></span>)</span>&#123;conv.close(<span class="string">&#x27;藍色是最溫暖的顏色&#x27;</span>);&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;conv.close(<span class="string">&#x27;真巧，我也喜歡&#x27;</span>+color);&#125;</span><br><span class="line">    </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set the DialogflowApp object to handle the HTTPS POST request.</span></span><br><span class="line"><span class="built_in">exports</span>.dialogflowFirebaseFulfillment = functions.https.onRequest(app);</span><br></pre></td></tr></table></figure>
-<h2 id="額外補充"><a href="#額外補充" class="headerlink" title="額外補充"></a>額外補充</h2><p>在Fulfillment之中，我們能擷取來自Dialogflow的資料進行判斷並據此回覆。<br>在我們的範例中，擷取的資料是「用戶輸入的顏色」這個Intent所擷取的參數「color」。<br>而Fulfillment所做的事是判斷參數「color」的數值來給予回應。<br><img src="https://hank199599.github.io/assets/img/process34.png" alt="image"> </p>
-<h1 id="後續步驟"><a href="#後續步驟" class="headerlink" title="後續步驟"></a>後續步驟</h1><p>前往「用戶輸入的顏色」這個Intent的設定頁面。<br>至頁面最底部的「Fulfillment」，<br>開啟「Enable webhook call for this intent」<br><img src="https://hank199599.github.io/assets/img/process35.png" alt="image"> </p>
-<h2 id="在Google助理上試用"><a href="#在Google助理上試用" class="headerlink" title="在Google助理上試用"></a>在Google助理上試用</h2><p><img src="https://hank199599.github.io/assets/img/process36.png" alt="image"> </p>
+<h2 id="額外補充"><a href="#額外補充" class="headerlink" title="額外補充"></a>額外補充</h2><p>在Fulfillment之中，我們能擷取來自Dialogflow的資料進行判斷並據此回覆。<br>在我們的範例中，擷取的資料是「用戶輸入的顏色」這個Intent所擷取的參數「color」。<br>而Fulfillment所做的事是判斷參數「color」的數值來給予回應。<br><img src="https://hank199599.github.io/assets/img/blog/process34.png" alt="image"> </p>
+<h1 id="後續步驟"><a href="#後續步驟" class="headerlink" title="後續步驟"></a>後續步驟</h1><p>前往「用戶輸入的顏色」這個Intent的設定頁面。<br>至頁面最底部的「Fulfillment」，<br>開啟「Enable webhook call for this intent」<br><img src="https://hank199599.github.io/assets/img/blog/process35.png" alt="image"> </p>
+<h2 id="在Google助理上試用"><a href="#在Google助理上試用" class="headerlink" title="在Google助理上試用"></a>在Google助理上試用</h2><p><img src="https://hank199599.github.io/assets/img/blog/process36.png" alt="image"> </p>
 
     </div>
 
@@ -428,7 +428,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Hank Yu"
-      src="https://hank199599.github.io/assets/img/blog_pic.jpg">
+      src="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
   <p class="site-author-name" itemprop="name">Hank Yu</p>
   <div class="site-description" itemprop="description">記錄在轉職路上的點點滴滴</div>
 </div>
