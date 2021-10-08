@@ -400,7 +400,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-10-01 02:04:03" itemprop="dateModified" datetime="2021-10-01T02:04:03+08:00">2021-10-01</time>
+                <time title="修改時間：2021-10-09 00:00:30" itemprop="dateModified" datetime="2021-10-09T00:00:30+08:00">2021-10-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -427,7 +427,9 @@
 <p>基於昨日文章的說明，<br>我們已經建立了一個資料庫協助我們暫存資料資料<br>但缺乏驅動負責拉取與上傳資料的Function之機制，<br>在本日的文章，會簡單講述你可以如何借助GCP的服務來完成這個需求</p>
 </blockquote>
 <h1 id="架構圖"><a href="#架構圖" class="headerlink" title="架構圖"></a>架構圖</h1><p><img src="https://camo.githubusercontent.com/59160f6e1fb2ca4d7fc55cd5a062f34d2ea2ba4dd0a86d23ee0b72ece4c18548/68747470733a2f2f68616e6b3139393539392e6769746875622e696f2f6173736574732f696d672f4743502f53797374656d5f7374727563747572652e706e67" alt="pic-1"></p>
-<h2 id="Cloud-Pub-Sub"><a href="#Cloud-Pub-Sub" class="headerlink" title="Cloud Pub/Sub"></a>Cloud Pub/Sub</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=cvu53CnZmGI"><img src="https://img.youtube.com/vi/cvu53CnZmGI/0.jpg" alt="Yes"></a><br>這是一項Google的資訊傳遞服務，<br>我們可以透過它，向負責抓取資料並上傳資料到資料庫的Cloud Function傳遞資訊並為我們工作!<br><img src="https://tachingchen.com/img/google-cloud-pubsub/pub_sub_flow.svg" alt="img-1"></p>
+<h2 id="Cloud-Pub-Sub"><a href="#Cloud-Pub-Sub" class="headerlink" title="Cloud Pub/Sub"></a>Cloud Pub/Sub</h2><div class="video-container"><iframe src="https://www.youtube.com/embed/cvu53CnZmGI" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
+<p>這是一項Google的資訊傳遞服務，<br>我們可以透過它，向負責抓取資料並上傳資料到資料庫的Cloud Function傳遞資訊並為我們工作!<br><img src="https://tachingchen.com/img/google-cloud-pubsub/pub_sub_flow.svg" alt="img-1"></p>
 <h3 id="運作方式"><a href="#運作方式" class="headerlink" title="運作方式"></a>運作方式</h3><ol>
 <li>Publisher 首先在 Cloud Pub/Sub 建立傳訊息用的 Topic，然後開始向該 Topic 傳送訊息</li>
 <li>當訊息被接收前或尚未收到 Acknowledge(Ack) 時，會被保存起來並等待在次傳送出去</li>

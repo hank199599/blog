@@ -20,19 +20,18 @@
     var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="基於昨日文章的說明，我們已經建立了一個資料庫協助我們暫存資料資料但缺乏驅動負責拉取與上傳資料的Function之機制，在本日的文章，會簡單講述你可以如何借助GCP的服務來完成這個需求  架構圖 Cloud Pub&#x2F;Sub這是一項Google的資訊傳遞服務，我們可以透過它，向負責抓取資料並上傳資料到資料庫的Cloud Function傳遞資訊並為我們工作! 運作方式 Publisher 首先在 C">
+  <meta name="description" content="基於昨日文章的說明，我們已經建立了一個資料庫協助我們暫存資料資料但缺乏驅動負責拉取與上傳資料的Function之機制，在本日的文章，會簡單講述你可以如何借助GCP的服務來完成這個需求  架構圖 Cloud Pub&#x2F;Sub  這是一項Google的資訊傳遞服務，我們可以透過它，向負責抓取資料並上傳資料到資料庫的Cloud Function傳遞資訊並為我們工作! 運作方式 Publisher 首先在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Day28 - 透過GCP實作(4&#x2F;4)：透過Scheduler與Pub&#x2F;Sub使抓取資料自動化">
 <meta property="og:url" content="https://hank199599.github.io/blog/2021/09/28/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0/Day28/index.html">
 <meta property="og:site_name" content="隨筆部落格">
-<meta property="og:description" content="基於昨日文章的說明，我們已經建立了一個資料庫協助我們暫存資料資料但缺乏驅動負責拉取與上傳資料的Function之機制，在本日的文章，會簡單講述你可以如何借助GCP的服務來完成這個需求  架構圖 Cloud Pub&#x2F;Sub這是一項Google的資訊傳遞服務，我們可以透過它，向負責抓取資料並上傳資料到資料庫的Cloud Function傳遞資訊並為我們工作! 運作方式 Publisher 首先在 C">
+<meta property="og:description" content="基於昨日文章的說明，我們已經建立了一個資料庫協助我們暫存資料資料但缺乏驅動負責拉取與上傳資料的Function之機制，在本日的文章，會簡單講述你可以如何借助GCP的服務來完成這個需求  架構圖 Cloud Pub&#x2F;Sub  這是一項Google的資訊傳遞服務，我們可以透過它，向負責抓取資料並上傳資料到資料庫的Cloud Function傳遞資訊並為我們工作! 運作方式 Publisher 首先在">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://camo.githubusercontent.com/59160f6e1fb2ca4d7fc55cd5a062f34d2ea2ba4dd0a86d23ee0b72ece4c18548/68747470733a2f2f68616e6b3139393539392e6769746875622e696f2f6173736574732f696d672f4743502f53797374656d5f7374727563747572652e706e67">
-<meta property="og:image" content="https://img.youtube.com/vi/cvu53CnZmGI/0.jpg">
 <meta property="og:image" content="https://tachingchen.com/img/google-cloud-pubsub/pub_sub_flow.svg">
 <meta property="og:image" content="https://s4.itho.me/sites/default/files/styles/picture_size_large/public/field/image/cloud_tasks_scheduler_blog_graphic_n40cxom.max-700x700.png?itok=FExZj391">
 <meta property="article:published_time" content="2021-09-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-30T18:04:03.074Z">
+<meta property="article:modified_time" content="2021-10-08T16:00:30.813Z">
 <meta property="article:author" content="Hank Yu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://camo.githubusercontent.com/59160f6e1fb2ca4d7fc55cd5a062f34d2ea2ba4dd0a86d23ee0b72ece4c18548/68747470733a2f2f68616e6b3139393539392e6769746875622e696f2f6173736574732f696d672f4743502f53797374656d5f7374727563747572652e706e67">
@@ -231,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-10-01 02:04:03" itemprop="dateModified" datetime="2021-10-01T02:04:03+08:00">2021-10-01</time>
+                <time title="修改時間：2021-10-09 00:00:30" itemprop="dateModified" datetime="2021-10-09T00:00:30+08:00">2021-10-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,7 +264,9 @@
 <p>基於昨日文章的說明，<br>我們已經建立了一個資料庫協助我們暫存資料資料<br>但缺乏驅動負責拉取與上傳資料的Function之機制，<br>在本日的文章，會簡單講述你可以如何借助GCP的服務來完成這個需求</p>
 </blockquote>
 <h1 id="架構圖"><a href="#架構圖" class="headerlink" title="架構圖"></a>架構圖</h1><p><img src="https://camo.githubusercontent.com/59160f6e1fb2ca4d7fc55cd5a062f34d2ea2ba4dd0a86d23ee0b72ece4c18548/68747470733a2f2f68616e6b3139393539392e6769746875622e696f2f6173736574732f696d672f4743502f53797374656d5f7374727563747572652e706e67" alt="pic-1"></p>
-<h2 id="Cloud-Pub-Sub"><a href="#Cloud-Pub-Sub" class="headerlink" title="Cloud Pub/Sub"></a>Cloud Pub/Sub</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=cvu53CnZmGI"><img src="https://img.youtube.com/vi/cvu53CnZmGI/0.jpg" alt="Yes"></a><br>這是一項Google的資訊傳遞服務，<br>我們可以透過它，向負責抓取資料並上傳資料到資料庫的Cloud Function傳遞資訊並為我們工作!<br><img src="https://tachingchen.com/img/google-cloud-pubsub/pub_sub_flow.svg" alt="img-1"></p>
+<h2 id="Cloud-Pub-Sub"><a href="#Cloud-Pub-Sub" class="headerlink" title="Cloud Pub/Sub"></a>Cloud Pub/Sub</h2><div class="video-container"><iframe src="https://www.youtube.com/embed/cvu53CnZmGI" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+
+<p>這是一項Google的資訊傳遞服務，<br>我們可以透過它，向負責抓取資料並上傳資料到資料庫的Cloud Function傳遞資訊並為我們工作!<br><img src="https://tachingchen.com/img/google-cloud-pubsub/pub_sub_flow.svg" alt="img-1"></p>
 <h3 id="運作方式"><a href="#運作方式" class="headerlink" title="運作方式"></a>運作方式</h3><ol>
 <li>Publisher 首先在 Cloud Pub/Sub 建立傳訊息用的 Topic，然後開始向該 Topic 傳送訊息</li>
 <li>當訊息被接收前或尚未收到 Acknowledge(Ack) 時，會被保存起來並等待在次傳送出去</li>
