@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="藉由Google Cloud Function建構DialogFlow Fulfillment透過GCP上的Cloud Function這項SaaS (Software as a Service) 服務，我們能輕鬆快速地建構DialogFlow Fulfillment來達成我們今日的需求。你也能參見官方撰寫於Qwiklabs的實作範例。Google Assistant: Build an Appl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day17 - 藉由DialogFlow Fulfillment 實踐對話流設計">
+<meta property="og:url" content="https://hank199599.github.io/blog/2021/09/16/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day17/index.html">
+<meta property="og:site_name" content="隨筆部落格">
+<meta property="og:description" content="藉由Google Cloud Function建構DialogFlow Fulfillment透過GCP上的Cloud Function這項SaaS (Software as a Service) 服務，我們能輕鬆快速地建構DialogFlow Fulfillment來達成我們今日的需求。你也能參見官方撰寫於Qwiklabs的實作範例。Google Assistant: Build an Appl">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://www.gstatic.com/bricks/image/31b5bfef7017b6db48c0148e9695f8522b442778a14ebeb227910c36241fed0f.svg">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process30.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process31.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process32.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process33.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%968.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process34.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process35.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process36.png">
+<meta property="article:published_time" content="2021-09-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-22T03:19:27.853Z">
+<meta property="article:author" content="Hank Yu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.gstatic.com/bricks/image/31b5bfef7017b6db48c0148e9695f8522b442778a14ebeb227910c36241fed0f.svg">
+
+<link rel="canonical" href="https://hank199599.github.io/blog/2021/09/16/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day17/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>Day17 - 藉由DialogFlow Fulfillment 實踐對話流設計 | 隨筆部落格</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/atom.xml" title="隨筆部落格" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">隨筆部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">朝向新的目標</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/../" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2021/09/16/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+      <meta itemprop="name" content="Hank Yu">
+      <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨筆部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Day17 - 藉由DialogFlow Fulfillment 實踐對話流設計
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-17 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-17T00:00:00+08:00">2021-09-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-22 11:19:27" itemprop="dateModified" datetime="2026-02-22T11:19:27+08:00">2026-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/2021%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">2021鐵人賽30天挑戰文章</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="藉由Google-Cloud-Function建構DialogFlow-Fulfillment"><a href="#藉由Google-Cloud-Function建構DialogFlow-Fulfillment" class="headerlink" title="藉由Google Cloud Function建構DialogFlow Fulfillment"></a>藉由Google Cloud Function建構DialogFlow Fulfillment</h1><p><img src="https://www.gstatic.com/bricks/image/31b5bfef7017b6db48c0148e9695f8522b442778a14ebeb227910c36241fed0f.svg" alt="diagram"><br>透過GCP上的Cloud Function這項SaaS (Software as a Service) 服務，<br>我們能輕鬆快速地建構DialogFlow Fulfillment來達成我們今日的需求。<br>你也能參見官方撰寫於<strong>Qwiklabs</strong>的實作範例。<br><a target="_blank" rel="noopener" href="https://www.qwiklabs.com/focuses/3634?parent=catalog">Google Assistant: Build an Application with Dialogflow and Cloud Functions</a></p>
+<h1 id="開啟內建編輯器"><a href="#開啟內建編輯器" class="headerlink" title="開啟內建編輯器"></a>開啟內建編輯器</h1><blockquote>
+<p>如果各位尚未進行任何設定，可以先完成下列文章的教學再接續下方的步驟<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10262684">[Day12] 於DialogFlow中實踐對話流設計</a></p>
+</blockquote>
+<ol>
+<li><p>首先，前往「Fulfillment」分頁。<br>開啟Inline Editor的功能，我們將透過他於GCP上建立雲端函式。<br>並以此撰寫程式來客製化回應。<br><img src="https://hank199599.github.io/assets/img/blog/process30.png" alt="image">  </p>
+</li>
+<li><p>開啟該功能後，系統會提示需要啟用GCP的付費功能。<br>請點擊「OPEN CLOUD CONSOLE」繼續操作。<br><img src="https://hank199599.github.io/assets/img/blog/process31.png" alt="image"> </p>
+</li>
+<li><p>跟著系統的導引建立帳單帳戶，並將其綁訂到這個專案上<br><img src="https://hank199599.github.io/assets/img/blog/process32.png" alt="image"> </p>
+</li>
+<li><p>現在，你已經成功開啟我們所需要的雲端編輯器啦!<br><img src="https://hank199599.github.io/assets/img/blog/process33.png" alt="image"> </p>
+</li>
+</ol>
+<h1 id="透過Fulfillment修改Intent的回應"><a href="#透過Fulfillment修改Intent的回應" class="headerlink" title="透過Fulfillment修改Intent的回應"></a>透過Fulfillment修改Intent的回應</h1><p><img src="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%968.png" alt="image"> </p>
+<p>依照我們先前所提及的架構。<br>來客製化我們先前要設計的對話。  </p>
+<h3 id="1-複製貼上以下程式片段到「index-js」，取代原有的程式碼"><a href="#1-複製貼上以下程式片段到「index-js」，取代原有的程式碼" class="headerlink" title="1. 複製貼上以下程式片段到「index.js」，取代原有的程式碼"></a>1. 複製貼上以下程式片段到「index.js」，取代原有的程式碼</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Import the Dialogflow module from the Actions on Google client library.</span></span><br><span class="line"><span class="keyword">const</span> &#123;dialogflow&#125; = <span class="built_in">require</span>(<span class="string">&#x27;actions-on-google&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Import the firebase-functions package for deployment.</span></span><br><span class="line"><span class="keyword">const</span> functions = <span class="built_in">require</span>(<span class="string">&#x27;firebase-functions&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Instantiate the Dialogflow client.</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">dialogflow</span>(&#123;<span class="attr">debug</span>: <span class="literal">true</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Handle the Dialogflow intent named &#x27;favorite color&#x27;.</span></span><br><span class="line"><span class="comment">// The intent collects a parameter named &#x27;color&#x27;.</span></span><br><span class="line">app.<span class="title function_">intent</span>(<span class="string">&#x27;用戶輸入的顏色&#x27;</span>, <span class="function">(<span class="params">conv, &#123;color&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// Respond with the specific response and end the conversation.</span></span><br><span class="line">	<span class="keyword">if</span>(color===<span class="string">&quot;綠色&quot;</span>)&#123;conv.<span class="title function_">close</span>(<span class="string">&#x27;綠光戰警?&#x27;</span>);&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(color===<span class="string">&quot;紅色&quot;</span>)&#123;conv.<span class="title function_">close</span>(<span class="string">&#x27;感覺充滿喜氣&#x27;</span>);&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(color===<span class="string">&quot;藍色&quot;</span>)&#123;conv.<span class="title function_">close</span>(<span class="string">&#x27;藍色是最溫暖的顏色&#x27;</span>);&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;conv.<span class="title function_">close</span>(<span class="string">&#x27;真巧，我也喜歡&#x27;</span>+color);&#125;</span><br><span class="line">    </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set the DialogflowApp object to handle the HTTPS POST request.</span></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">dialogflowFirebaseFulfillment</span> = functions.<span class="property">https</span>.<span class="title function_">onRequest</span>(app);</span><br></pre></td></tr></table></figure>
+<h3 id="2-複製貼上以下程式片段到「package-json」，取代原有的程式碼"><a href="#2-複製貼上以下程式片段到「package-json」，取代原有的程式碼" class="headerlink" title="2. 複製貼上以下程式片段到「package.json」，取代原有的程式碼"></a>2. 複製貼上以下程式片段到「package.json」，取代原有的程式碼</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;dialogflowFirebaseFulfillment&quot;</span>,</span><br><span class="line">  <span class="string">&quot;description&quot;</span>: <span class="string">&quot;This is the default fulfillment for a Dialogflow agents using Cloud Functions for Firebase&quot;</span>,</span><br><span class="line">  <span class="string">&quot;version&quot;</span>: <span class="string">&quot;0.0.1&quot;</span>,</span><br><span class="line">  <span class="string">&quot;private&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;license&quot;</span>: <span class="string">&quot;Apache Version 2.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;author&quot;</span>: <span class="string">&quot;Google Inc.&quot;</span>,</span><br><span class="line">  <span class="string">&quot;engines&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;node&quot;</span>: <span class="string">&quot;10&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;start&quot;</span>: <span class="string">&quot;firebase serve --only functions:dialogflowFirebaseFulfillment&quot;</span>,</span><br><span class="line">    <span class="string">&quot;deploy&quot;</span>: <span class="string">&quot;firebase deploy --only functions:dialogflowFirebaseFulfillment&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;actions-on-google&quot;</span>: <span class="string">&quot;^2.2.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;firebase-admin&quot;</span>: <span class="string">&quot;^5.13.1&quot;</span>,</span><br><span class="line">    <span class="string">&quot;firebase-functions&quot;</span>: <span class="string">&quot;^2.0.2&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dialogflow&quot;</span>: <span class="string">&quot;^0.6.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dialogflow-fulfillment&quot;</span>: <span class="string">&quot;^0.5.0&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="額外補充"><a href="#額外補充" class="headerlink" title="額外補充"></a>額外補充</h2><p>在Fulfillment之中，我們能擷取來自Dialogflow的資料進行判斷並據此回覆。<br>在我們的範例中，擷取的資料是「用戶輸入的顏色」這個Intent所擷取的參數(Entities)「color」。<br>而上述的「index.js」所做的事是判斷參數「<strong>color</strong>」的數值來給予回應。<br><img src="https://hank199599.github.io/assets/img/blog/process34.png" alt="image"> </p>
+<h1 id="後續步驟"><a href="#後續步驟" class="headerlink" title="後續步驟"></a>後續步驟</h1><p>前往「用戶輸入的顏色」這個Intent的設定頁面。<br>至頁面最底部的「Fulfillment」，<br>開啟「Enable webhook call for this intent」<br><img src="https://hank199599.github.io/assets/img/blog/process35.png" alt="image"> </p>
+<h2 id="在Google助理上試用"><a href="#在Google助理上試用" class="headerlink" title="在Google助理上試用"></a>在Google助理上試用</h2><blockquote>
+<p>請參照以下教學的詳細步驟<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10262775">[Day13] 前往Actions On Google平台試用</a></p>
+</blockquote>
+<p>現在，你可以前往 <a target="_blank" rel="noopener" href="https://console.actions.google.com/">Actions on Google Developer Console</a>進行測試了，<br>看看你的Action是否有照著Fulfillment設定的邏輯進行回應!<br><img src="https://hank199599.github.io/assets/img/blog/process36.png" alt="image"> </p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p>在這裡所使用的Fulfillment是在DialogFlow上透過Google Cloud Function所建構的。<br>你也能夠在Google Cloud Platform或Firebase上進行編輯。<br>詳情請參考下列的網址：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/learn/topics/functions">Cloud Functions | Google Developers</a></li>
+<li><a target="_blank" rel="noopener" href="https://firebase.google.com/docs/functions">Cloud Functions for Firebase</a></li>
+</ul>
+<h1 id="接下來…"><a href="#接下來…" class="headerlink" title="接下來…"></a>接下來…</h1><p>我們將會從語音使用者介面設計的角度，<br>探討與對話流設計息息相關的**長尾問題 (long tail problem)**。<br>並了解如何應用它使Action能專注在主要的目的上並增進使用體驗。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>以行動支持我</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/blog/images/linepay.jpg" alt="Hank Yu Linepay">
+        <p>Linepay</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/blog/images/%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98.png" alt="Hank Yu 街口支付">
+        <p>街口支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://hank199599.github.io/blog/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/15/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day16/" rel="prev" title="Day16 - 依據反饋改進初始對話流">
+      <i class="fa fa-chevron-left"></i> Day16 - 依據反饋改進初始對話流
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/17/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day18/" rel="next" title="Day18 - 長尾問題 (long tail problem)">
+      Day18 - 長尾問題 (long tail problem) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%97%89%E7%94%B1Google-Cloud-Function%E5%BB%BA%E6%A7%8BDialogFlow-Fulfillment"><span class="nav-number">1.</span> <span class="nav-text">藉由Google Cloud Function建構DialogFlow Fulfillment</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%96%8B%E5%95%9F%E5%85%A7%E5%BB%BA%E7%B7%A8%E8%BC%AF%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">開啟內建編輯器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%8F%E9%81%8EFulfillment%E4%BF%AE%E6%94%B9Intent%E7%9A%84%E5%9B%9E%E6%87%89"><span class="nav-number">3.</span> <span class="nav-text">透過Fulfillment修改Intent的回應</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%A4%87%E8%A3%BD%E8%B2%BC%E4%B8%8A%E4%BB%A5%E4%B8%8B%E7%A8%8B%E5%BC%8F%E7%89%87%E6%AE%B5%E5%88%B0%E3%80%8Cindex-js%E3%80%8D%EF%BC%8C%E5%8F%96%E4%BB%A3%E5%8E%9F%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. 複製貼上以下程式片段到「index.js」，取代原有的程式碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%A4%87%E8%A3%BD%E8%B2%BC%E4%B8%8A%E4%BB%A5%E4%B8%8B%E7%A8%8B%E5%BC%8F%E7%89%87%E6%AE%B5%E5%88%B0%E3%80%8Cpackage-json%E3%80%8D%EF%BC%8C%E5%8F%96%E4%BB%A3%E5%8E%9F%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. 複製貼上以下程式片段到「package.json」，取代原有的程式碼</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8D%E5%A4%96%E8%A3%9C%E5%85%85"><span class="nav-number">3.1.</span> <span class="nav-text">額外補充</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%8C%E7%BA%8C%E6%AD%A5%E9%A9%9F"><span class="nav-number">4.</span> <span class="nav-text">後續步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8Google%E5%8A%A9%E7%90%86%E4%B8%8A%E8%A9%A6%E7%94%A8"><span class="nav-number">4.1.</span> <span class="nav-text">在Google助理上試用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">4.2.</span> <span class="nav-text">參考資料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E4%BE%86%E2%80%A6"><span class="nav-number">5.</span> <span class="nav-text">接下來…</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hank Yu"
+      src="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+  <p class="site-author-name" itemprop="name">Hank Yu</p>
+  <div class="site-description" itemprop="description">記錄在轉職路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hank199599" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hank199599" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hank199599@gmail.com" title="E-Mail → mailto:hank199599@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.qwiklabs.com/public_profiles/1590ecef-5aa1-4e69-b24d-cb87e785a3cb" title="Qwiklab → https:&#x2F;&#x2F;google.qwiklabs.com&#x2F;public_profiles&#x2F;1590ecef-5aa1-4e69-b24d-cb87e785a3cb" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100000555093316" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000555093316" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">若要轉載文章，請保留原作者名稱與原始連結。</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

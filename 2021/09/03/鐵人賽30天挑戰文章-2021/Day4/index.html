@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="首先，在開始一個好的設計之前，如同廣告投放一般，我們需要找出目標受眾來設計出更符合他們的對話流程。   有以下幾點是我們需要留意的：   誰將是你的使用者?  他們的需求將會是甚麼?  他們現在是如何完成這些需求的?  他們會使用甚麼詞彙來描述這些需要被完成的需求?  什麼情況或事件下會觸發這些需求?  容納所有用戶雖然針對最常使用的用戶進行優化很重要，但不要以犧牲其他用戶的體驗為代價。精心設計的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day4 - 找出你的受眾目標">
+<meta property="og:url" content="https://hank199599.github.io/blog/2021/09/03/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day4/index.html">
+<meta property="og:site_name" content="隨筆部落格">
+<meta property="og:description" content="首先，在開始一個好的設計之前，如同廣告投放一般，我們需要找出目標受眾來設計出更符合他們的對話流程。   有以下幾點是我們需要留意的：   誰將是你的使用者?  他們的需求將會是甚麼?  他們現在是如何完成這些需求的?  他們會使用甚麼詞彙來描述這些需要被完成的需求?  什麼情況或事件下會觸發這些需求?  容納所有用戶雖然針對最常使用的用戶進行優化很重要，但不要以犧牲其他用戶的體驗為代價。精心設計的">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-09-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-22T03:19:27.854Z">
+<meta property="article:author" content="Hank Yu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hank199599.github.io/blog/2021/09/03/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>Day4 - 找出你的受眾目標 | 隨筆部落格</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/atom.xml" title="隨筆部落格" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">隨筆部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">朝向新的目標</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/../" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2021/09/03/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+      <meta itemprop="name" content="Hank Yu">
+      <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨筆部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Day4 - 找出你的受眾目標
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-04 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-04T00:00:00+08:00">2021-09-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-22 11:19:27" itemprop="dateModified" datetime="2026-02-22T11:19:27+08:00">2026-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/2021%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">2021鐵人賽30天挑戰文章</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>首先，在開始一個好的設計之前，<br>如同廣告投放一般，<br>我們需要找出目標受眾來設計出更符合他們的對話流程。  </p>
+<p>有以下幾點是我們需要留意的：</p>
+<ul>
+<li> <strong>誰</strong>將是你的使用者?</li>
+<li> 他們的<strong>需求</strong>將會是甚麼?</li>
+<li> 他們現在是如何完成這些需求的?</li>
+<li> 他們會使用甚麼詞彙來描述這些需要被完成的需求?</li>
+<li> 什麼情況或事件下會觸發這些需求?</li>
+</ul>
+<h2 id="容納所有用戶"><a href="#容納所有用戶" class="headerlink" title="容納所有用戶"></a>容納所有用戶</h2><p>雖然針對最常使用的用戶進行優化很重要，但不要以犧牲其他用戶的體驗為代價。<br>精心設計的產品具有包容性和普遍性。<br>為不同人群設計意味著利用包容性設計或通用設計策略。<br>通常，您被迫為一個人群做出的調整最終會惠及所有人。</p>
+<h3 id="假想使用者"><a href="#假想使用者" class="headerlink" title="假想使用者"></a>假想使用者</h3><blockquote>
+<ul>
+<li> <strong>誰</strong>將是你的使用者?</li>
+</ul>
+</blockquote>
+<p>假想使用者是一個特定的個別用戶且具備清晰的描述，<br>請試著想像：<br>你預期哪種類型的使用者將會使用你的Action，並寫下一些可能的<strong>用戶特質</strong>來代表他們。<br>這些<strong>用戶特質</strong>將會協助你避免建構出一個只完成你個人目標的Action。</p>
+<h3 id="用戶流程-user-journeys"><a href="#用戶流程-user-journeys" class="headerlink" title="用戶流程 (user journeys)"></a>用戶流程 (user journeys)</h3><blockquote>
+<ul>
+<li>使用者希望達到的目標是什麼?</li>
+<li>他們會使用怎樣的詞彙來代表這個目標?</li>
+</ul>
+</blockquote>
+<p>用戶在給定情境中透過你的Action完成目標的途徑。</p>
+<h3 id="關鍵用戶流程-Critical-user-journeys"><a href="#關鍵用戶流程-Critical-user-journeys" class="headerlink" title="關鍵用戶流程 (Critical user journeys)"></a>關鍵用戶流程 (Critical user journeys)</h3><blockquote>
+<ul>
+<li>描述對話流程中的每個相關時刻</li>
+</ul>
+</blockquote>
+<p>關鍵用戶流程是那些 <strong>經常發生</strong> 或 <strong>對用戶至關重要</strong> 的對話流程。<br>旨在幫助用戶從頭到尾完成其中一個流程。<br>專注於這些將幫助您構建能夠覆蓋大量和或專門受眾的行動。</p>
+<h1 id="接下來…"><a href="#接下來…" class="headerlink" title="接下來…"></a>接下來…</h1><p>我們將會來看看一個實際運作中的Action，<br>看它是如何依照我們今日所提及的設計指引建構Action!</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversation-design/gather-requirements#identify-your-users">Identify your users | Google Developers</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>以行動支持我</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/blog/images/linepay.jpg" alt="Hank Yu Linepay">
+        <p>Linepay</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/blog/images/%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98.png" alt="Hank Yu 街口支付">
+        <p>街口支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://hank199599.github.io/blog/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/02/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day3/" rel="prev" title="Day3 - 語音介面設計簡易入手指南">
+      <i class="fa fa-chevron-left"></i> Day3 - 語音介面設計簡易入手指南
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/04/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day5/" rel="next" title="Day5 - 假想使用者之情境範例">
+      Day5 - 假想使用者之情境範例 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E7%B4%8D%E6%89%80%E6%9C%89%E7%94%A8%E6%88%B6"><span class="nav-number">1.</span> <span class="nav-text">容納所有用戶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%87%E6%83%B3%E4%BD%BF%E7%94%A8%E8%80%85"><span class="nav-number">1.1.</span> <span class="nav-text">假想使用者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B6%E6%B5%81%E7%A8%8B-user-journeys"><span class="nav-number">1.2.</span> <span class="nav-text">用戶流程 (user journeys)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%9C%E9%8D%B5%E7%94%A8%E6%88%B6%E6%B5%81%E7%A8%8B-Critical-user-journeys"><span class="nav-number">1.3.</span> <span class="nav-text">關鍵用戶流程 (Critical user journeys)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E4%BE%86%E2%80%A6"><span class="nav-number"></span> <span class="nav-text">接下來…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number"></span> <span class="nav-text">參考資料</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hank Yu"
+      src="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+  <p class="site-author-name" itemprop="name">Hank Yu</p>
+  <div class="site-description" itemprop="description">記錄在轉職路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hank199599" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hank199599" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hank199599@gmail.com" title="E-Mail → mailto:hank199599@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.qwiklabs.com/public_profiles/1590ecef-5aa1-4e69-b24d-cb87e785a3cb" title="Qwiklab → https:&#x2F;&#x2F;google.qwiklabs.com&#x2F;public_profiles&#x2F;1590ecef-5aa1-4e69-b24d-cb87e785a3cb" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100000555093316" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000555093316" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">若要轉載文章，請保留原作者名稱與原始連結。</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

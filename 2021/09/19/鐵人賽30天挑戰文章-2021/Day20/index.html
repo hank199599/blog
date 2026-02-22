@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="現在，你應該有了一個能妥善處理各種意外情形。且能妥善引導使用者滿足他們主要需求的對話流了。在今天的文章中，我們要拓展對話流應用的視野。這篇文章中將先粗略介紹可使用的回應元件有哪些，善加利用它們你將能增進使用者體驗。  剖析回應的種類根據呈現方式，可以將Action能使用的反應粗略分類為兩種 會話元件：每次回應都應包含的基本要素會話元件由語音回應、文字回應和建議卡片中的內容組合而成。其中，每個對話">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day20 - 擴展你的設計：剖析回應可使用的元件並加以運用">
+<meta property="og:url" content="https://hank199599.github.io/blog/2021/09/19/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day20/index.html">
+<meta property="og:site_name" content="隨筆部落格">
+<meta property="og:description" content="現在，你應該有了一個能妥善處理各種意外情形。且能妥善引導使用者滿足他們主要需求的對話流了。在今天的文章中，我們要拓展對話流應用的視野。這篇文章中將先粗略介紹可使用的回應元件有哪些，善加利用它們你將能增進使用者體驗。  剖析回應的種類根據呈現方式，可以將Action能使用的反應粗略分類為兩種 會話元件：每次回應都應包含的基本要素會話元件由語音回應、文字回應和建議卡片中的內容組合而成。其中，每個對話">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/responsecomponents_conversional.png">
+<meta property="og:image" content="https://img.youtube.com/vi/JDakZMlXpQo/0.jpg">
+<meta property="article:published_time" content="2021-09-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-22T03:19:27.854Z">
+<meta property="article:author" content="Hank Yu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hank199599.github.io/assets/img/blog/responsecomponents_conversional.png">
+
+<link rel="canonical" href="https://hank199599.github.io/blog/2021/09/19/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day20/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>Day20 - 擴展你的設計：剖析回應可使用的元件並加以運用 | 隨筆部落格</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/atom.xml" title="隨筆部落格" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">隨筆部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">朝向新的目標</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/../" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2021/09/19/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+      <meta itemprop="name" content="Hank Yu">
+      <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨筆部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Day20 - 擴展你的設計：剖析回應可使用的元件並加以運用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-20T00:00:00+08:00">2021-09-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-22 11:19:27" itemprop="dateModified" datetime="2026-02-22T11:19:27+08:00">2026-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/2021%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">2021鐵人賽30天挑戰文章</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>現在，你應該有了一個能妥善處理各種意外情形。<br>且能妥善引導使用者滿足他們主要需求的對話流了。<br>在今天的文章中，我們要拓展對話流應用的視野。<br>這篇文章中將先粗略介紹可使用的回應元件有哪些，<br>善加利用它們你將能增進使用者體驗。</p>
+</blockquote>
+<h1 id="剖析回應的種類"><a href="#剖析回應的種類" class="headerlink" title="剖析回應的種類"></a>剖析回應的種類</h1><p>根據呈現方式，可以將Action能使用的反應粗略分類為兩種</p>
+<h2 id="會話元件：每次回應都應包含的基本要素"><a href="#會話元件：每次回應都應包含的基本要素" class="headerlink" title="會話元件：每次回應都應包含的基本要素"></a>會話元件：每次回應都應包含的基本要素</h2><p>會話元件由語音回應、文字回應和建議卡片中的內容組合而成。<br>其中，每個對話回合都應該包含會話組件（回應和建議卡片）。</p>
+<table>
+<thead>
+<tr>
+<th>組成要件</th>
+<th>詳細說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>語音回應</td>
+<td>你的 Action 通過 TTS 或預先錄製的音訊檔案向用戶傳達的內容</td>
+</tr>
+<tr>
+<td>文字回應</td>
+<td>您的 Action 通過屏幕上的文本對白顯現給用戶的內容</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversation-design/chips">建議卡片</a></td>
+<td>提供用戶繼續或轉移對話的建議對白</td>
+</tr>
+</tbody></table>
+<h2 id="視覺化元件：可依據情境選用"><a href="#視覺化元件：可依據情境選用" class="headerlink" title="視覺化元件：可依據情境選用"></a>視覺化元件：可依據情境選用</h2><p>視覺化元件由卡片、旋轉木馬選單和其他視覺化元素所組成。<br>如果您要呈現詳細信息或需要陳列或比較需要進行比較的選項可以使用它們，但並非每次對話都需要被使用到。<br>|組成要件|詳細說明|<br>|–|–|<br>|<a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversation-design/basic-card">基本卡片</a>|以文字形式向用戶傳達的內容，需要時可以增加一按鈕供用戶前往網站查看詳細內容|<br>||<a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversation-design/browsing-carousel">Browsing carousel</a>|當這些項目是來自<strong>網絡</strong>的內容時，為允許用戶選擇許多項目之一進行了優化。|<br>|<a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversation-design/carousel">旋轉木馬選單</a>|允許用戶選擇許多項目中的一個，當這些項目能輕易透過圖片來區分時可以使用。|<br>|<a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversation-design/list">清單</a>|當這些項目可以輕易透過其<strong>標題</strong>區分時，允許用戶選擇眾多項目中的一個。|<br>|<a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversation-design/media-response">Media response</a>|用於播放和控制音訊檔案（如音樂或有聲書等)|<br>|<a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversation-design/table">表格卡片</a>|以用戶能輕於快速瀏覽的格式展示靜態數據|</p>
+<p><img src="https://hank199599.github.io/assets/img/blog/responsecomponents_conversional.png" alt="diagram"></p>
+<h2 id="相關影片"><a href="#相關影片" class="headerlink" title="相關影片"></a>相關影片</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=JDakZMlXpQo"><img src="https://img.youtube.com/vi/JDakZMlXpQo/0.jpg" alt="Yes"></a></p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/assistant/conversation-design/scale-your-design">Conversation Design  |  Google Developers</a></li>
+</ul>
+<h1 id="下一步…"><a href="#下一步…" class="headerlink" title="下一步…"></a>下一步…</h1><p>我們將了解到，<br>這些如何屬性不同的元件，在各式型態的裝置上能夠如何被運用。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>以行動支持我</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/blog/images/linepay.jpg" alt="Hank Yu Linepay">
+        <p>Linepay</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/blog/images/%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98.png" alt="Hank Yu 街口支付">
+        <p>街口支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://hank199599.github.io/blog/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/18/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day19/" rel="prev" title="Day19 - 長尾問題：案例分析">
+      <i class="fa fa-chevron-left"></i> Day19 - 長尾問題：案例分析
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/20/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day21/" rel="next" title="Day21 - 擴展你的設計：根據與對話發生的裝置修改對白">
+      Day21 - 擴展你的設計：根據與對話發生的裝置修改對白 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%96%E6%9E%90%E5%9B%9E%E6%87%89%E7%9A%84%E7%A8%AE%E9%A1%9E"><span class="nav-number">1.</span> <span class="nav-text">剖析回應的種類</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%83%E8%A9%B1%E5%85%83%E4%BB%B6%EF%BC%9A%E6%AF%8F%E6%AC%A1%E5%9B%9E%E6%87%89%E9%83%BD%E6%87%89%E5%8C%85%E5%90%AB%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A6%81%E7%B4%A0"><span class="nav-number">1.1.</span> <span class="nav-text">會話元件：每次回應都應包含的基本要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%96%E8%A6%BA%E5%8C%96%E5%85%83%E4%BB%B6%EF%BC%9A%E5%8F%AF%E4%BE%9D%E6%93%9A%E6%83%85%E5%A2%83%E9%81%B8%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">視覺化元件：可依據情境選用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E9%97%9C%E5%BD%B1%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text">相關影片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">1.4.</span> <span class="nav-text">參考資料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E4%B8%80%E6%AD%A5%E2%80%A6"><span class="nav-number">2.</span> <span class="nav-text">下一步…</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hank Yu"
+      src="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+  <p class="site-author-name" itemprop="name">Hank Yu</p>
+  <div class="site-description" itemprop="description">記錄在轉職路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hank199599" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hank199599" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hank199599@gmail.com" title="E-Mail → mailto:hank199599@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.qwiklabs.com/public_profiles/1590ecef-5aa1-4e69-b24d-cb87e785a3cb" title="Qwiklab → https:&#x2F;&#x2F;google.qwiklabs.com&#x2F;public_profiles&#x2F;1590ecef-5aa1-4e69-b24d-cb87e785a3cb" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100000555093316" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000555093316" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">若要轉載文章，請保留原作者名稱與原始連結。</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

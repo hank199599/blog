@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="在Google助理平台上呼叫Google助理調用Action的方式，依據用戶是否明白指出調用的Action而分為兩種調用方式：  顯式調用(Explicit Invocation)使用者清楚地向Google助理表達欲使用的Action為何者   未指定特定動作一般情況下，若使用者未向Action指定想進行的操作為何。Google會將使用者導入開發者預定的預設歡迎畫面(Default Welcom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day7 - 隱式調用與顯式調用是甚麼?">
+<meta property="og:url" content="https://hank199599.github.io/blog/2021/09/06/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day7/index.html">
+<meta property="og:site_name" content="隨筆部落格">
+<meta property="og:description" content="在Google助理平台上呼叫Google助理調用Action的方式，依據用戶是否明白指出調用的Action而分為兩種調用方式：  顯式調用(Explicit Invocation)使用者清楚地向Google助理表達欲使用的Action為何者   未指定特定動作一般情況下，若使用者未向Action指定想進行的操作為何。Google會將使用者導入開發者預定的預設歡迎畫面(Default Welcom">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%961.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%962.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%963.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%965.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%964.png">
+<meta property="article:published_time" content="2021-09-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-22T03:19:27.854Z">
+<meta property="article:author" content="Hank Yu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%961.png">
+
+<link rel="canonical" href="https://hank199599.github.io/blog/2021/09/06/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>Day7 - 隱式調用與顯式調用是甚麼? | 隨筆部落格</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/atom.xml" title="隨筆部落格" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">隨筆部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">朝向新的目標</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/../" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2021/09/06/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+      <meta itemprop="name" content="Hank Yu">
+      <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨筆部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Day7 - 隱式調用與顯式調用是甚麼?
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-07 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-07T00:00:00+08:00">2021-09-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-22 11:19:27" itemprop="dateModified" datetime="2026-02-22T11:19:27+08:00">2026-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/2021%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">2021鐵人賽30天挑戰文章</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>在Google助理平台上<br>呼叫Google助理調用Action的方式，<br>依據用戶是否明白指出調用的Action而分為兩種調用方式：</p>
+</blockquote>
+<h2 id="顯式調用-Explicit-Invocation"><a href="#顯式調用-Explicit-Invocation" class="headerlink" title="顯式調用(Explicit Invocation)"></a>顯式調用(Explicit Invocation)</h2><p>使用者清楚地向Google助理表達欲使用的Action為何者<br><img src="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%961.png" alt="image">  </p>
+<h3 id="未指定特定動作"><a href="#未指定特定動作" class="headerlink" title="未指定特定動作"></a>未指定特定動作</h3><p>一般情況下，若使用者未向Action指定想進行的操作為何。<br>Google會將使用者導入開發者預定的<strong>預設歡迎畫面(Default Welcome Intent)</strong>  </p>
+<p><img src="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%962.png" alt="image">  </p>
+<h3 id="指定特定動作-：語音版捷徑"><a href="#指定特定動作-：語音版捷徑" class="headerlink" title="指定特定動作 ：語音版捷徑"></a>指定特定動作 ：語音版捷徑</h3><p>用戶也可以選擇在調用同時<strong>添加一個調用短語</strong>，<br>這方式得以將使用者直接帶到他們所請求的意圖。<br>其語言架構如下所示：<br><img src="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%963.png" alt="image"> </p>
+<h4 id="用戶能指示Google助理存取您的操作的示例短語："><a href="#用戶能指示Google助理存取您的操作的示例短語：" class="headerlink" title="用戶能指示Google助理存取您的操作的示例短語："></a>用戶能指示Google助理存取您的操作的示例短語：</h4><ul>
+<li> 叫 <em>$name</em> <strong>$request_action</strong></li>
+<li> 跟 <em>$name</em> 說 <strong>$request_action</strong></li>
+<li> 問 <em>$name</em> <strong>$request_action</strong></li>
+<li> 和 <em>$name</em> 說 <strong>$request_action</strong></li>
+</ul>
+<h4 id="實際系統運作時的架構圖"><a href="#實際系統運作時的架構圖" class="headerlink" title="實際系統運作時的架構圖"></a>實際系統運作時的架構圖</h4><p><img src="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%965.png" alt="image">  </p>
+<h2 id="隱式調用-Implicit-invocation"><a href="#隱式調用-Implicit-invocation" class="headerlink" title="隱式調用(Implicit invocation)"></a>隱式調用(Implicit invocation)</h2><p><img src="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%964.png" alt="image"><br>調用短語描述了Action的特定功能。<br>用戶調用Action時，可能會包含一個可以深度鏈接到特定功能之一的調用短語。<br>舉例來說，如果使用者想玩1A2B。<br>可能會直接向Google助理詢問。<br>而Google助理就會自Actions On Google平台尋找最類似的Action推薦使用者。<br>不過這項功能在<strong>中文版尚未啟用</strong>，只能在draft(草案)模式下試用。</p>
+<h1 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h1><p>在我們了解到與設計對話流息息相關的隱式調用與顯式調用後，<br>我們將繼續昨日設計對話流的旅程!</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>以行動支持我</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/blog/images/linepay.jpg" alt="Hank Yu Linepay">
+        <p>Linepay</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/blog/images/%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98.png" alt="Hank Yu 街口支付">
+        <p>街口支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://hank199599.github.io/blog/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/05/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day6/" rel="prev" title="Day 6 - 蒐集對話經驗">
+      <i class="fa fa-chevron-left"></i> Day 6 - 蒐集對話經驗
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/07/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day8/" rel="next" title="Day8 - 從角色扮演找出初始的對話流程">
+      Day8 - 從角色扮演找出初始的對話流程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%AF%E5%BC%8F%E8%AA%BF%E7%94%A8-Explicit-Invocation"><span class="nav-number">1.</span> <span class="nav-text">顯式調用(Explicit Invocation)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AA%E6%8C%87%E5%AE%9A%E7%89%B9%E5%AE%9A%E5%8B%95%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">未指定特定動作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E7%89%B9%E5%AE%9A%E5%8B%95%E4%BD%9C-%EF%BC%9A%E8%AA%9E%E9%9F%B3%E7%89%88%E6%8D%B7%E5%BE%91"><span class="nav-number">1.2.</span> <span class="nav-text">指定特定動作 ：語音版捷徑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B6%E8%83%BD%E6%8C%87%E7%A4%BAGoogle%E5%8A%A9%E7%90%86%E5%AD%98%E5%8F%96%E6%82%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E7%9A%84%E7%A4%BA%E4%BE%8B%E7%9F%AD%E8%AA%9E%EF%BC%9A"><span class="nav-number">1.2.1.</span> <span class="nav-text">用戶能指示Google助理存取您的操作的示例短語：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%A6%E9%9A%9B%E7%B3%BB%E7%B5%B1%E9%81%8B%E4%BD%9C%E6%99%82%E7%9A%84%E6%9E%B6%E6%A7%8B%E5%9C%96"><span class="nav-number">1.2.2.</span> <span class="nav-text">實際系統運作時的架構圖</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%B1%E5%BC%8F%E8%AA%BF%E7%94%A8-Implicit-invocation"><span class="nav-number">2.</span> <span class="nav-text">隱式調用(Implicit invocation)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E4%B8%80%E6%AD%A5"><span class="nav-number"></span> <span class="nav-text">下一步</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hank Yu"
+      src="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+  <p class="site-author-name" itemprop="name">Hank Yu</p>
+  <div class="site-description" itemprop="description">記錄在轉職路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hank199599" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hank199599" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hank199599@gmail.com" title="E-Mail → mailto:hank199599@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.qwiklabs.com/public_profiles/1590ecef-5aa1-4e69-b24d-cb87e785a3cb" title="Qwiklab → https:&#x2F;&#x2F;google.qwiklabs.com&#x2F;public_profiles&#x2F;1590ecef-5aa1-4e69-b24d-cb87e785a3cb" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100000555093316" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000555093316" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">若要轉載文章，請保留原作者名稱與原始連結。</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

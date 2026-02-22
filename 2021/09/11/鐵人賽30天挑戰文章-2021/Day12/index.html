@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="範例：詢問用戶喜歡的顏色在這個範例裡，我們假設一個要蒐集使用者偏好顏色的資料集。並透過語音助理來協助我們進行資料蒐集。為此我們需要先假想使用者與之互動時可能的對話流，並加以進行改進。      你可以透過上傳我預先做好的angent.zip 到你的DialogFlow專案，搭配這篇文章服用能更快理解以下內容的操作!專案頁面    踏出第一步：修改對話內容首先，點擊進入Default Welcome">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day12 - 於DialogFlow中實踐對話流設計">
+<meta property="og:url" content="https://hank199599.github.io/blog/2021/09/11/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day12/index.html">
+<meta property="og:site_name" content="隨筆部落格">
+<meta property="og:description" content="範例：詢問用戶喜歡的顏色在這個範例裡，我們假設一個要蒐集使用者偏好顏色的資料集。並透過語音助理來協助我們進行資料蒐集。為此我們需要先假想使用者與之互動時可能的對話流，並加以進行改進。      你可以透過上傳我預先做好的angent.zip 到你的DialogFlow專案，搭配這篇文章服用能更快理解以下內容的操作!專案頁面    踏出第一步：修改對話內容首先，點擊進入Default Welcome">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%967.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process15.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process16.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process17.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process18.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process19.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process21.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process22.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process23.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process24.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process25.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process26.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process27.png">
+<meta property="og:image" content="https://hank199599.github.io/assets/img/blog/process28.png">
+<meta property="article:published_time" content="2021-09-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-22T03:19:27.853Z">
+<meta property="article:author" content="Hank Yu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%967.png">
+
+<link rel="canonical" href="https://hank199599.github.io/blog/2021/09/11/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day12/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>Day12 - 於DialogFlow中實踐對話流設計 | 隨筆部落格</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/atom.xml" title="隨筆部落格" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">隨筆部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">朝向新的目標</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/../" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2021/09/11/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+      <meta itemprop="name" content="Hank Yu">
+      <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨筆部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Day12 - 於DialogFlow中實踐對話流設計
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-12 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-12T00:00:00+08:00">2021-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-22 11:19:27" itemprop="dateModified" datetime="2026-02-22T11:19:27+08:00">2026-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/2021%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">2021鐵人賽30天挑戰文章</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="範例：詢問用戶喜歡的顏色"><a href="#範例：詢問用戶喜歡的顏色" class="headerlink" title="範例：詢問用戶喜歡的顏色"></a>範例：詢問用戶喜歡的顏色</h1><p>在這個範例裡，我們假設一個要蒐集使用者偏好顏色的資料集。<br>並透過語音助理來協助我們進行資料蒐集。<br>為此我們需要先假想使用者與之互動時可能的對話流，並加以進行改進。   </p>
+<p><img src="https://hank199599.github.io/assets/img/blog/%E7%A4%BA%E6%84%8F%E5%9C%967.png" alt="pic 6-1"></p>
+<blockquote>
+<p>你可以透過上傳我預先做好的<strong>angent.zip</strong> 到你的DialogFlow專案，<br>搭配這篇文章服用能更快理解以下內容的操作!<br><a target="_blank" rel="noopener" href="https://github.com/hank199599/Assistant_demo_devfest"><strong>專案頁面</strong></a>  </p>
+</blockquote>
+<h2 id="踏出第一步：修改對話內容"><a href="#踏出第一步：修改對話內容" class="headerlink" title="踏出第一步：修改對話內容"></a>踏出第一步：修改對話內容</h2><p>首先，點擊進入Default Welcome Intent，並更改系統預設的回應<br><img src="https://hank199599.github.io/assets/img/blog/process15.png" alt="image"> </p>
+<p>刪除多餘的回應，最後只留下一個回應，並將其更改為：<br><strong>「歡迎，你喜歡的顏色是什麼?」</strong><br><img src="https://hank199599.github.io/assets/img/blog/process16.png" alt="image">  </p>
+<h2 id="建立顏色的數據集-Entities"><a href="#建立顏色的數據集-Entities" class="headerlink" title="建立顏色的數據集(Entities)"></a>建立顏色的數據集(Entities)</h2><ol>
+<li>首先，透過左側的「Entities」選項切換到數據集頁面。<br><img src="https://hank199599.github.io/assets/img/blog/process17.png" alt="pic 6-2">  </li>
+<li>接著，點選右上角的「Create Entities」建立我們所需要的資料集<br><img src="https://hank199599.github.io/assets/img/blog/process18.png" alt="pic 6-3">  </li>
+<li>將這個資料集命名為「color」，<br><img src="https://hank199599.github.io/assets/img/blog/process19.png" alt="pic 6-4">  </li>
+</ol>
+<h2 id="建立蒐集顏色的Intent-意圖"><a href="#建立蒐集顏色的Intent-意圖" class="headerlink" title="建立蒐集顏色的Intent(意圖)"></a>建立蒐集顏色的Intent(意圖)</h2><ol>
+<li>切換回「Intents」頁面，建立一個新的Intent來客製化新的對話流程。<br>點選畫面右上角的「Create Intent」。<br><img src="https://hank199599.github.io/assets/img/blog/process21.png" alt="pic 6-6">  </li>
+<li>將Intent名稱設定為「<strong>用戶輸入的顏色</strong>」，在「Training pharse」輸入一些用戶可能會說的話來訓練模型。  <strong>例如</strong>：我喜歡綠色<br><img src="https://hank199599.github.io/assets/img/blog/process22.png" alt="pic 6-7">   </li>
+</ol>
+<p><img src="https://hank199599.github.io/assets/img/blog/process23.png" alt="pic 6-8"><br>3. 接著向下滾動頁面，我們要進一步設計這個Intent所給予的回應。  </p>
+<ul>
+<li>設計「Response」，輸入「真巧，我也喜歡$color」</li>
+<li>根據我們先前的對話流設計，在取得用戶偏好的顏色後就會結束對話。<br>因此「Set this intent as end of conversation」的開關要打開。<br>如此一來，當用戶說出他喜歡的顏色後就會自動離開對話。<br><img src="https://hank199599.github.io/assets/img/blog/process24.png" alt="pic 6-9">  </li>
+</ul>
+<p><img src="https://hank199599.github.io/assets/img/blog/process25.png" alt="pic 6-10"><br>4. 在上述操作完成後，點擊「Save」來儲存剛剛的設定。</p>
+<h2 id="修改不明回應的Intent-意圖"><a href="#修改不明回應的Intent-意圖" class="headerlink" title="修改不明回應的Intent(意圖)"></a>修改不明回應的Intent(意圖)</h2><ol>
+<li>回到展示所有Intent的頁面，現在會看到「<strong>用戶輸入的顏色</strong>」已經出現在列表中了!<br>接著，請點選「Default Fallback Intent」修改模型在碰到無關輸入時要進行的回應。<br><img src="https://hank199599.github.io/assets/img/blog/process26.png" alt="pic 6-11"></li>
+<li>首先，把原本被填寫的回應清除。<br><img src="https://hank199599.github.io/assets/img/blog/process27.png" alt="pic 6-12"></li>
+<li>接著，填上我們在對話流設計的範本中所預想的回應：「**不好意思，請問你喜歡的顏色是甚麼?**」<br><img src="https://hank199599.github.io/assets/img/blog/process28.png" alt="pic 6-13"><h1 id="接下來…"><a href="#接下來…" class="headerlink" title="接下來…"></a>接下來…</h1>我們將前往<strong>Action On Google</strong>平台上實際體驗一下我們甫建立的對話流!</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>以行動支持我</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/blog/images/linepay.jpg" alt="Hank Yu Linepay">
+        <p>Linepay</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/blog/images/%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98.png" alt="Hank Yu 街口支付">
+        <p>街口支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://hank199599.github.io/blog/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/10/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day11/" rel="prev" title="Day11 - 設定 DialogFlow 專案">
+      <i class="fa fa-chevron-left"></i> Day11 - 設定 DialogFlow 專案
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/09/12/%E9%90%B5%E4%BA%BA%E8%B3%BD30%E5%A4%A9%E6%8C%91%E6%88%B0%E6%96%87%E7%AB%A0-2021/Day13/" rel="next" title="Day13 - 前往Actions On Google平台試用">
+      Day13 - 前往Actions On Google平台試用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%EF%BC%9A%E8%A9%A2%E5%95%8F%E7%94%A8%E6%88%B6%E5%96%9C%E6%AD%A1%E7%9A%84%E9%A1%8F%E8%89%B2"><span class="nav-number">1.</span> <span class="nav-text">範例：詢問用戶喜歡的顏色</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B8%8F%E5%87%BA%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E4%BF%AE%E6%94%B9%E5%B0%8D%E8%A9%B1%E5%85%A7%E5%AE%B9"><span class="nav-number">1.1.</span> <span class="nav-text">踏出第一步：修改對話內容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E9%A1%8F%E8%89%B2%E7%9A%84%E6%95%B8%E6%93%9A%E9%9B%86-Entities"><span class="nav-number">1.2.</span> <span class="nav-text">建立顏色的數據集(Entities)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E8%92%90%E9%9B%86%E9%A1%8F%E8%89%B2%E7%9A%84Intent-%E6%84%8F%E5%9C%96"><span class="nav-number">1.3.</span> <span class="nav-text">建立蒐集顏色的Intent(意圖)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%8D%E6%98%8E%E5%9B%9E%E6%87%89%E7%9A%84Intent-%E6%84%8F%E5%9C%96"><span class="nav-number">1.4.</span> <span class="nav-text">修改不明回應的Intent(意圖)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E4%BE%86%E2%80%A6"><span class="nav-number">2.</span> <span class="nav-text">接下來…</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hank Yu"
+      src="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+  <p class="site-author-name" itemprop="name">Hank Yu</p>
+  <div class="site-description" itemprop="description">記錄在轉職路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hank199599" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hank199599" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hank199599@gmail.com" title="E-Mail → mailto:hank199599@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.qwiklabs.com/public_profiles/1590ecef-5aa1-4e69-b24d-cb87e785a3cb" title="Qwiklab → https:&#x2F;&#x2F;google.qwiklabs.com&#x2F;public_profiles&#x2F;1590ecef-5aa1-4e69-b24d-cb87e785a3cb" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100000555093316" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000555093316" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">若要轉載文章，請保留原作者名稱與原始連結。</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
