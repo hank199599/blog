@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="親愛的AI愛好者與技術探險家們，歡迎來到今天的AI新聞速遞！今天的頭條新聞圍繞著人工智慧的幾個關鍵面向：公眾對數據隱私的擔憂、日趨嚴格的監管框架、以及AI從實驗室走向企業實踐的挑戰與機遇。從Meta對AI訓練條款的緊急喊停，到企業如何將AI從「演示模式」推向「生產模式」，這些事件無不提醒我們，AI的未來不僅關乎技術突破，更在於如何平衡創新、倫私與實際應用。  今日AI新聞精選Meta 的 AI 訓">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI浪潮下的省思：隱私、監管與實踐之路">
+<meta property="og:url" content="https://hank199599.github.io/blog/2026/11/05/ai_news/2026-11-06-ai-news-digest/index.html">
+<meta property="og:site_name" content="隨筆部落格">
+<meta property="og:description" content="親愛的AI愛好者與技術探險家們，歡迎來到今天的AI新聞速遞！今天的頭條新聞圍繞著人工智慧的幾個關鍵面向：公眾對數據隱私的擔憂、日趨嚴格的監管框架、以及AI從實驗室走向企業實踐的挑戰與機遇。從Meta對AI訓練條款的緊急喊停，到企業如何將AI從「演示模式」推向「生產模式」，這些事件無不提醒我們，AI的未來不僅關乎技術突破，更在於如何平衡創新、倫私與實際應用。  今日AI新聞精選Meta 的 AI 訓">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-11-05T22:42:46.000Z">
+<meta property="article:modified_time" content="2026-11-07T06:41:54.014Z">
+<meta property="article:author" content="Hank Yu">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="人工智慧">
+<meta property="article:tag" content="機器學習">
+<meta property="article:tag" content="隱私">
+<meta property="article:tag" content="監管">
+<meta property="article:tag" content="企業AI">
+<meta property="article:tag" content="Meta">
+<meta property="article:tag" content="資料主權">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Oracle">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hank199599.github.io/blog/2026/11/05/ai_news/2026-11-06-ai-news-digest/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>AI浪潮下的省思：隱私、監管與實踐之路 | 隨筆部落格</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/atom.xml" title="隨筆部落格" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">隨筆部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">朝向新的目標</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/../" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2026/11/05/ai_news/2026-11-06-ai-news-digest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+      <meta itemprop="name" content="Hank Yu">
+      <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨筆部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI浪潮下的省思：隱私、監管與實踐之路
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-11-06 06:42:46" itemprop="dateCreated datePublished" datetime="2026-11-06T06:42:46+08:00">2026-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-11-07 14:41:54" itemprop="dateModified" datetime="2026-11-07T14:41:54+08:00">2026-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/AI-News/" itemprop="url" rel="index"><span itemprop="name">AI News</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/AI-News/Tech-Digest/" itemprop="url" rel="index"><span itemprop="name">Tech Digest</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>親愛的AI愛好者與技術探險家們，歡迎來到今天的AI新聞速遞！今天的頭條新聞圍繞著人工智慧的幾個關鍵面向：公眾對數據隱私的擔憂、日趨嚴格的監管框架、以及AI從實驗室走向企業實踐的挑戰與機遇。從Meta對AI訓練條款的緊急喊停，到企業如何將AI從「演示模式」推向「生產模式」，這些事件無不提醒我們，AI的未來不僅關乎技術突破，更在於如何平衡創新、倫私與實際應用。</p>
+<hr>
+<h3 id="今日AI新聞精選"><a href="#今日AI新聞精選" class="headerlink" title="今日AI新聞精選"></a>今日AI新聞精選</h3><p><strong>Meta 的 AI 訓練條款暫停：公眾隱私意識的勝利？</strong><br>社群巨頭Meta近期因其新的AI訓練條款引發全球公眾的強烈反彈。在壓力之下，Meta被迫暫緩了這些條款的實施，承諾將重新審視。這不僅凸顯了用戶對於個人數據隱私權益的重視，也向所有AI開發者發出警訊：在AI模型訓練中如何使用用戶數據，必須更加透明和負責。</p>
+<p><strong>Proton 執行長：AI發展與安全隱私的兩難</strong><br>以隱私保護著稱的Proton公司，其執行長最近的言論引發了爭議，他似乎將AI的發展置於安全性之上。這場內部「AI清算」揭示了即使是強調隱私的科技公司，在追求AI創新時也可能面臨價值觀的衝突，使得如何在AI浪潮中堅守安全與隱私原則，成為業界共同的考題。</p>
+<p><strong>美國期中選舉後 AI 監管環境趨嚴</strong><br>隨著美國國會可能由民主黨掌控，企業界預計將面臨更嚴格的AI監管格局。這意味著AI相關企業在開發和部署AI技術時，需要投入更多資源來應對合規性挑戰，並可能導致AI基礎設施的建設速度減緩。監管的加強，將塑造AI產業未來的發展方向與競爭環境。</p>
+<p><strong>猶他大學：保有營運主權，擴展 AI 研究版圖</strong><br>猶他大學透過確保其Redtail AI超級電腦的營運主權，成功擴展了研究存取權限。這項舉措讓大學能夠自主管理、分配和保護共享的運算資源，對於維護學術研究的獨立性、數據安全以及避免潛在的供應商鎖定效應至關重要。</p>
+<p><strong>Oracle：將AI代理從演示模式帶入生產環境</strong><br>許多企業能成功打造令人驚豔的AI代理演示，但將其轉化為實際生產應用卻困難重重。Oracle正努力彌補這一鴻溝，旨在提供更穩健的AI架構，解決數據暴露、系統穩定性及成本超支等問題，幫助企業將AI代理更有效地整合到日常營運中。</p>
+<p><strong>企業數據：通用AI轉為商業工具的關鍵</strong><br>通用AI模型雖能執行基本任務，但若要為企業帶來實質價值，就必須與其專屬的內部數據結合。Oracle強調，企業數據能賦予AI代理必要的業務上下文，使其能夠處理訂單、了解客戶行為，進而推動業務進展。這不僅提升了AI的效能，也引發了對數據複雜性、廠商鎖定及安全性的新考量。</p>
+<p><strong>KubeCon + CloudNativeCon NA：Kubernetes 在 AI 工作負載中的潛力</strong><br>作為容器編排的標準，Kubernetes已成為企業IT基礎設施的核心。業界正熱烈討論，Kubernetes能否在管理下一代AI工作負載方面扮演關鍵角色，為AI的規模化部署和運維提供穩定可靠的基礎。</p>
+<hr>
+<h3 id="分析：AI產業的下一步？"><a href="#分析：AI產業的下一步？" class="headerlink" title="分析：AI產業的下一步？"></a>分析：AI產業的下一步？</h3><p>從這些新聞事件中，我們可以清楚地看到AI產業正處於一個關鍵的轉折點。</p>
+<p>首先，<strong>倫理、隱私與監管</strong>已成為AI發展不可迴避的核心議題。Meta的案例顯示，公眾對數據使用的敏感度極高，企業若輕視隱私問題，將面臨巨大的信任危機。而Proton的兩難則警示我們，即使是最注重隱私的技術公司，在AI的誘惑面前也可能動搖其核心價值。隨之而來的，是各國政府日益收緊的監管政策，這將迫使企業在創新之餘，必須將合規性與負責任的AI原則融入開發流程。</p>
+<p>其次，<strong>AI的「實用化」與「落地」</strong>是當前的產業重心。Oracle的努力反映出，將AI從技術演示轉化為能實際解決業務問題的生產級工具，仍面臨巨大的技術和架構挑戰。這不僅需要強大的AI代理，更需要企業提供豐富且安全的內部數據作為上下文，才能讓AI真正理解並行動。這場從「好看」到「好用」的轉變，將決定AI能否大規模賦能各行各業。</p>
+<p>最後，<strong>基礎設施與數據主權</strong>的重要性日益凸顯。猶他大學對AI運算資源主權的堅持，強調了研究機構和企業對於自身數據和運算能力的控制權。同時，Kubernetes等雲原生技術在AI工作負載管理中的應用，也說明了高效、可擴展的基礎設施是AI大規模部署的基石。在數據成為新石油的時代，誰能有效管理、運用並保有數據主權，誰就能在AI競爭中佔據優勢。</p>
+<h3 id="給讀者的啟示"><a href="#給讀者的啟示" class="headerlink" title="給讀者的啟示"></a>給讀者的啟示</h3><ul>
+<li>  <strong>擁抱監管，而非逃避：</strong> AI的未來將與法規共存。提前了解並符合相關法規，是企業永續發展的基礎。</li>
+<li>  <strong>數據是核心資產：</strong> 投資於數據的收集、治理、安全和整合，是讓AI發揮商業價值的關鍵。沒有高品質的數據，再好的AI模型也只是空殼。</li>
+<li>  <strong>從一開始就規劃生產級AI：</strong> 在AI專案啟動之初，就應考慮其在生產環境中的部署、穩定性、安全性和成本效益。</li>
+<li>  <strong>將隱私與安全融入AI設計：</strong> 採取「隱私設計」和「安全設計」的理念，從AI開發的源頭就考慮用戶數據的保護與潛在的安全風險。</li>
+</ul>
+<p>AI的旅程充滿挑戰，但也充滿無限可能。唯有在技術創新、倫理責任與實際應用之間找到最佳平衡點，我們才能真正駕馭這股強大的浪潮。</p>
+<h2 id="Sources"><a href="#Sources" class="headerlink" title="Sources"></a>Sources</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.404media.co/meta-generative-ai-commercial-terms-on-pause/">Everyone Everywhere Hated Meta’s New AI Training Terms. Now, They’re On Pause</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.404media.co/oldest-evidence-of-getting-high-on-cannabis-discovered-in-2800-year-old-tomb/">Oldest Evidence of Getting High on Cannabis Discovered In 2,800-Year-Old Tomb: ‘Absolutely Crazy’</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.404media.co/uk-crime-and-policing-act-pornography/">In the UK, Face Sitting Porn Might Land You in Jail</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.404media.co/podcast-protons-ceo-is-putting-ai-before-security/">Podcast: Proton’s CEO Is Putting AI Before Security</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.404media.co/republicans-learn-x-is-an-echo-chamber/">Republicans Learn X Is the Echo Chamber</a></li>
+<li><a target="_blank" rel="noopener" href="https://aibusiness.com/data-centers/enterprises-face-tougher-ai-regulatory-landscape">Enterprises face tougher AI regulatory landscape after midterms</a></li>
+<li><a target="_blank" rel="noopener" href="https://siliconangle.com/2026/11/05/university-utah-retains-operational-sovereignty-redtail-expands-research-access-hpesovereignai/">University of Utah retains operational sovereignty as Redtail expands research access</a></li>
+<li><a target="_blank" rel="noopener" href="https://siliconangle.com/2026/11/05/ai-architecture-gaps-keep-agents-demo-mode-oracleaiworld/">Oracle wants to pull stalled AI agents out of demo mode and into production</a></li>
+<li><a target="_blank" rel="noopener" href="https://siliconangle.com/2026/11/05/oracle-database-pitches-one-engine-tame-enterprise-ai-data-oracleaiworld/">Same model, better answer: Enterprise data is what turns generic AI into a business tool</a></li>
+<li><a target="_blank" rel="noopener" href="https://siliconangle.com/2026/11/05/container-orchestration-kubecon-thecube-ai-kubeconna/">What to expect during KubeCon + CloudNativeCon NA: Join theCUBE Nov. 10-12</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>以行動支持我</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/blog/images/linepay.jpg" alt="Hank Yu Linepay">
+        <p>Linepay</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/blog/images/%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98.png" alt="Hank Yu 街口支付">
+        <p>街口支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://hank199599.github.io/blog/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/AI/" rel="tag"># AI</a>
+              <a href="/blog/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/" rel="tag"># 人工智慧</a>
+              <a href="/blog/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/" rel="tag"># 機器學習</a>
+              <a href="/blog/tags/%E9%9A%B1%E7%A7%81/" rel="tag"># 隱私</a>
+              <a href="/blog/tags/%E7%9B%A3%E7%AE%A1/" rel="tag"># 監管</a>
+              <a href="/blog/tags/%E4%BC%81%E6%A5%ADAI/" rel="tag"># 企業AI</a>
+              <a href="/blog/tags/Meta/" rel="tag"># Meta</a>
+              <a href="/blog/tags/%E8%B3%87%E6%96%99%E4%B8%BB%E6%AC%8A/" rel="tag"># 資料主權</a>
+              <a href="/blog/tags/Kubernetes/" rel="tag"># Kubernetes</a>
+              <a href="/blog/tags/Oracle/" rel="tag"># Oracle</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2026/11/03/ai_news/2026-11-04-ai-news-digest/" rel="prev" title="AI雙面刃：創新飆升與「劣質內容」之戰">
+      <i class="fa fa-chevron-left"></i> AI雙面刃：創新飆升與「劣質內容」之戰
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2026/11/06/ai_news/2026-11-07-ai-news-digest/" rel="next" title="AI前行之路：從天價融資到落地難題">
+      AI前行之路：從天價融資到落地難題 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5AI%E6%96%B0%E8%81%9E%E7%B2%BE%E9%81%B8"><span class="nav-number">1.</span> <span class="nav-text">今日AI新聞精選</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%EF%BC%9AAI%E7%94%A2%E6%A5%AD%E7%9A%84%E4%B8%8B%E4%B8%80%E6%AD%A5%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">分析：AI產業的下一步？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B5%A6%E8%AE%80%E8%80%85%E7%9A%84%E5%95%9F%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">給讀者的啟示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sources"><span class="nav-number"></span> <span class="nav-text">Sources</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hank Yu"
+      src="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+  <p class="site-author-name" itemprop="name">Hank Yu</p>
+  <div class="site-description" itemprop="description">記錄在轉職路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">348</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">582</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hank199599" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hank199599" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hank199599@gmail.com" title="E-Mail → mailto:hank199599@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.qwiklabs.com/public_profiles/1590ecef-5aa1-4e69-b24d-cb87e785a3cb" title="Qwiklab → https:&#x2F;&#x2F;google.qwiklabs.com&#x2F;public_profiles&#x2F;1590ecef-5aa1-4e69-b24d-cb87e785a3cb" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100000555093316" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000555093316" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">若要轉載文章，請保留原作者名稱與原始連結。</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
