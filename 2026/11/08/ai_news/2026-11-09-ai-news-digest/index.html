@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hank199599.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局親愛的AI愛好者們，歡迎來到今天的AI洞察日報！人工智慧的浪潮持續席捲全球，今天的頭條新聞不僅揭示了AI技術在企業應用中的深度拓展，更觸及了這項顛覆性技術所帶來的複雜倫理、法律及地緣政治挑戰。從NVIDIA的敏感調查，到智慧財產權的激烈辯論，再到各行各業的AI部署，讓我們一起深入探討AI世界中的最新脈動。  今日AI焦點速覽：    NVIDI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局">
+<meta property="og:url" content="https://hank199599.github.io/blog/2026/11/08/ai_news/2026-11-09-ai-news-digest/index.html">
+<meta property="og:site_name" content="隨筆部落格">
+<meta property="og:description" content="AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局親愛的AI愛好者們，歡迎來到今天的AI洞察日報！人工智慧的浪潮持續席捲全球，今天的頭條新聞不僅揭示了AI技術在企業應用中的深度拓展，更觸及了這項顛覆性技術所帶來的複雜倫理、法律及地緣政治挑戰。從NVIDIA的敏感調查，到智慧財產權的激烈辯論，再到各行各業的AI部署，讓我們一起深入探討AI世界中的最新脈動。  今日AI焦點速覽：    NVIDI">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-11-08T22:26:01.000Z">
+<meta property="article:modified_time" content="2026-11-14T07:08:54.201Z">
+<meta property="article:author" content="Hank Yu">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="資訊安全">
+<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="監管">
+<meta property="article:tag" content="科技倫理">
+<meta property="article:tag" content="晶片">
+<meta property="article:tag" content="Nvidia">
+<meta property="article:tag" content="企業合作">
+<meta property="article:tag" content="版權">
+<meta property="article:tag" content="超導體">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hank199599.github.io/blog/2026/11/08/ai_news/2026-11-09-ai-news-digest/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-tw'
+  };
+</script>
+
+  <title>AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局 | 隨筆部落格</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/atom.xml" title="隨筆部落格" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">隨筆部落格</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">朝向新的目標</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/../" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://hank199599.github.io/blog/2026/11/08/ai_news/2026-11-09-ai-news-digest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+      <meta itemprop="name" content="Hank Yu">
+      <meta itemprop="description" content="記錄在轉職路上的點點滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隨筆部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-11-09 06:26:01" itemprop="dateCreated datePublished" datetime="2026-11-09T06:26:01+08:00">2026-11-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-11-14 15:08:54" itemprop="dateModified" datetime="2026-11-14T15:08:54+08:00">2026-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/AI-News/" itemprop="url" rel="index"><span itemprop="name">AI News</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/AI-News/Tech-Digest/" itemprop="url" rel="index"><span itemprop="name">Tech Digest</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局"><a href="#AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局" class="headerlink" title="AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局"></a>AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局</h3><p>親愛的AI愛好者們，歡迎來到今天的AI洞察日報！人工智慧的浪潮持續席捲全球，今天的頭條新聞不僅揭示了AI技術在企業應用中的深度拓展，更觸及了這項顛覆性技術所帶來的複雜倫理、法律及地緣政治挑戰。從NVIDIA的敏感調查，到智慧財產權的激烈辯論，再到各行各業的AI部署，讓我們一起深入探討AI世界中的最新脈動。</p>
+<hr>
+<p><strong>今日AI焦點速覽：</strong></p>
+<ul>
+<li>  <strong>NVIDIA高層捲入「間諜門」疑雲，引發內部調查：</strong> 根據AIM和《衛報》報導，NVIDIA執行長黃仁勳與一位被指控為中國情報人員的女性之間的關係，已引發董事會層級的深入調查。此事件不僅牽動NVIDIA的企業安全，更凸顯了AI時代下，高科技產業在全球地緣政治格局中面臨的潛在風險與敏感性。</li>
+<li>  <strong>Hexaware攜手EBRD，推進銀行技術現代化：</strong> Hexaware成功與歐洲復興開發銀行（EBRD）簽署五年協議，將全面推動其銀行科技營運，包括軟體工程、雲端服務、網路安全及SAP現代化，並將導入Hexaware的AI框架，展現AI在金融領域的廣泛應用潛力。</li>
+<li>  <strong>LTM與ServiceNow深化合作，擴大AI代理部署：</strong> LTM與ServiceNow正加強合作夥伴關係，旨在提升AI代理的效率，以改善企業的資產管理並簡化營運流程。這項合作將助推AI驅動的自動化解決方案在企業級應用中的普及。</li>
+<li>  <strong>GCCs與印度IT產業聯手，加速企業級AI轉型：</strong> 報導指出，全球能力中心（GCCs）正與印度IT公司建立大規模合作夥伴關係，共同利用AI技術實現企業轉型。這反映了跨國企業對AI戰略性部署的重視，以及印度在AI服務領域的關鍵角色。</li>
+<li>  <strong>物理學家透過「電氣噪音」解開超導體之謎：</strong> 《Ars Technica》報導，科學家們透過監聽超導體的電氣噪音，成功判斷電子是否已配對，進而解開了超導體的一些謎團。儘管這並非直接的AI新聞，但基礎科學的突破往往是未來AI硬體或計算能力飛躍的基石。</li>
+<li>  <strong>全球音樂團體警告：弱化AI版權法將是「創意災難」：</strong> 國際唱片業協會（IFPI）警告澳洲政府，若為AI公司提供更寬鬆的線上內容取用權限，將嚴重損害創作者權益，並對澳洲的國際聲譽造成負面影響。此聲明凸顯了生成式AI發展與內容版權保護之間的緊張關係。</li>
+<li>  <strong>美國期中選舉結果引發對AI的重新思考：</strong> 《衛報》分析，美國期中選舉結果似乎加速了社會、政治及金融市場對AI的重新評估。公眾對AI的疑慮，特別是其可能對就業和社會公平造成的衝擊，正促使各界更謹慎地審視AI的發展方向和監管需求。</li>
+<li>  <strong>效率陷阱：過度優化可能適得其反：</strong> 《衛報》提出，過度追求效率，從環島設計到金融市場運作，都可能導致意想不到的負面後果。這篇文章警示我們，在AI時代盲目追求效率最大化，或許會忽略潛在的風險與複雜性。</li>
+</ul>
+<hr>
+<p><strong>AI產業洞察與分析：</strong></p>
+<p>今天的頭條新聞為我們描繪了一幅AI時代錯綜複雜的圖景。首先，<strong>NVIDIA的調查事件</strong>無疑是個警鐘，提醒我們在AI晶片和技術競賽白熱化之際，國家安全與企業治理的界線變得模糊，資訊安全與供應鏈韌性成為不可忽視的戰略重點。這也可能促使各國政府對高科技企業與境外實體的互動進行更嚴格的審查。</p>
+<p>其次，<strong>企業級AI應用的大規模部署</strong>，如Hexaware與EBRD、LTM與ServiceNow以及GCCs與印度IT企業的合作，表明AI已從實驗室走向企業核心，成為推動效率提升、優化營運和加速數位轉型的關鍵驅動力。這預示著未來幾年內，AI將深度重塑各行各業的生產力模型。</p>
+<p>然而，伴隨AI的廣泛應用，<strong>倫理與監管的挑戰</strong>也日益突出。全球音樂團體對AI版權法的擔憂，直指生成式AI在訓練資料合法性及創作者權益保護方面的巨大鴻溝。同時，美國期中選舉後對AI的「重新思考」，以及「效率陷阱」的討論，都反映出社會大眾對AI快速發展可能帶來的社會衝擊（如失業、決策偏誤、系統脆弱性）越來越警惕。這將加速各國政府制定更完善的AI監管框架，以平衡創新與風險。</p>
+<p>最後，<strong>超導體研究的突破</strong>提醒我們，儘管AI應用層出不窮，基礎科學的進步仍然是推動科技前沿的根本動力。這些看似遙遠的物理發現，未來可能會轉化為更強大、更節能的計算硬體，進一步拓展AI能力的邊界。</p>
+<hr>
+<p><strong>讀者重點 takeaways：</strong></p>
+<ol>
+<li> <strong>地緣政治風險不容忽視：</strong> 企業在AI時代的全球化布局，需更謹慎評估地緣政治與資訊安全風險。</li>
+<li> <strong>AI已是企業核心戰略：</strong> 無論身處哪個行業，都應積極探索AI在提升效率和創新服務方面的潛力。</li>
+<li> <strong>版權與倫理是AI發展的關鍵約束：</strong> 創作者、企業與政策制定者需共同努力，在推動AI創新的同時，確保智慧財產權與社會公平得到尊重。</li>
+<li> <strong>警惕「效率陷阱」：</strong> AI雖帶來效率，但過度或盲目追求效率可能產生反效果，需綜合考量系統的韌性與社會影響。</li>
+<li> <strong>關注基礎科學進展：</strong> 基礎科學的突破是長期驅動AI和其他科技進步的源泉，值得持續關注。</li>
+</ol>
+<hr>
+<p>AI的發展正如一場宏大的交響樂，其中既有企業合作的壯麗和弦，也有倫理監管的不和諧音，更有科學探索的深邃旋律。身處其中，我們不僅要擁抱其帶來的便利與創新，更要以審慎和遠見，共同塑造一個負責任且具永續性的智慧未來。</p>
+<h2 id="Sources"><a href="#Sources" class="headerlink" title="Sources"></a>Sources</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://analyticsindiamag.com/ai-news/nvidia-to-investigate-ceo-jensen-huangs-relationship-with-a-chinese-spy">NVIDIA to Investigate CEO Jensen Huang’s Relationship with a ‘Chinese Spy’</a></li>
+<li><a target="_blank" rel="noopener" href="https://analyticsindiamag.com/ai-news/hexaware-to-drive-ebrds-banking-tech-ops-for-5-years">Hexaware to Drive EBRD’s Banking Tech Ops for 5 Years</a></li>
+<li><a target="_blank" rel="noopener" href="https://analyticsindiamag.com/ai-news/ltm-servicenow-to-expand-partnership-to-scale-ai-agent-deployments">LTM, ServiceNow to Expand Partnership to Scale AI Agent Deployments</a></li>
+<li><a target="_blank" rel="noopener" href="https://analyticsindiamag.com/gcc/why-gccs-and-indian-it-are-partnering-at-enterprise-scale">Why GCCs and Indian IT are Partnering at Enterprise Scale</a></li>
+<li><a target="_blank" rel="noopener" href="https://arstechnica.com/science/2026/11/physicists-listened-to-electrical-noise-to-crack-a-superconductor-mystery/">Physicists listened to electrical noise to crack a superconductor mystery</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.theguardian.com/technology/2026/nov/09/weakening-ai-copyright-law-will-spell-disaster-for-creativity-australia">Weakening AI copyright law will spell ‘disaster for creativity’, global music body warns Albanese</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.theguardian.com/us-news/2026/nov/08/nvidia-jensen-huang-investigation">Nvidia opens investigation after report CEO Jensen Huang was target of foreign intelligence</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.theguardian.com/business/2026/nov/08/us-midterms-ai-datacentres-broligarchy-voter-backlash">1-0 to humankind? US midterms vote puts AI, datacentres and the broligarchy back in their box | Heather Stewart</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.theguardian.com/books/picture/2026/nov/08/tom-gauld-on-prompts-for-a-cartoon-about-artificial-intelligence-and-writing-cartoon">Tom Gauld on prompts for a cartoon about artificial intelligence and writing – cartoon</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.theguardian.com/books/2026/nov/08/the-efficiency-trap-why-optimising-everything-can-backfire-badly">The efficiency trap: why optimising everything can backfire, badly</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>以行動支持我</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/blog/images/linepay.jpg" alt="Hank Yu Linepay">
+        <p>Linepay</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/blog/images/%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98.png" alt="Hank Yu 街口支付">
+        <p>街口支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://hank199599.github.io/blog/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/AI/" rel="tag"># AI</a>
+              <a href="/blog/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/" rel="tag"># 資訊安全</a>
+              <a href="/blog/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+              <a href="/blog/tags/%E7%9B%A3%E7%AE%A1/" rel="tag"># 監管</a>
+              <a href="/blog/tags/%E7%A7%91%E6%8A%80%E5%80%AB%E7%90%86/" rel="tag"># 科技倫理</a>
+              <a href="/blog/tags/%E6%99%B6%E7%89%87/" rel="tag"># 晶片</a>
+              <a href="/blog/tags/Nvidia/" rel="tag"># Nvidia</a>
+              <a href="/blog/tags/%E4%BC%81%E6%A5%AD%E5%90%88%E4%BD%9C/" rel="tag"># 企業合作</a>
+              <a href="/blog/tags/%E7%89%88%E6%AC%8A/" rel="tag"># 版權</a>
+              <a href="/blog/tags/%E8%B6%85%E5%B0%8E%E9%AB%94/" rel="tag"># 超導體</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2026/11/07/ai_news/2026-11-08-ai-news-digest/" rel="prev" title="AI發展狂潮：從數據中心爭議到社會反思，還有地球的億年之謎">
+      <i class="fa fa-chevron-left"></i> AI發展狂潮：從數據中心爭議到社會反思，還有地球的億年之謎
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2026/11/09/ai_news/2026-11-10-ai-news-digest/" rel="next" title="AI脈動深度解析：從技術革新到產業佈局與倫理挑戰">
+      AI脈動深度解析：從技術革新到產業佈局與倫理挑戰 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#AI%E9%A2%A8%E9%9B%B2%E8%AE%8A%E5%B9%BB%EF%BC%9ANVIDIA%E9%AB%98%E5%B1%A4%E7%96%91%E9%9B%B2%E3%80%81%E7%89%88%E6%AC%8A%E6%94%BB%E9%98%B2%E8%88%87%E7%94%A2%E6%A5%AD%E6%96%B0%E5%B1%80"><span class="nav-number">1.</span> <span class="nav-text">AI風雲變幻：NVIDIA高層疑雲、版權攻防與產業新局</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sources"><span class="nav-number"></span> <span class="nav-text">Sources</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hank Yu"
+      src="https://hank199599.github.io/assets/img/blog/blog_pic.jpg">
+  <p class="site-author-name" itemprop="name">Hank Yu</p>
+  <div class="site-description" itemprop="description">記錄在轉職路上的點點滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">355</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">591</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hank199599" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hank199599" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hank199599@gmail.com" title="E-Mail → mailto:hank199599@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E7%B4%B9%E5%AE%8F-%E6%B8%B8-74679110b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://google.qwiklabs.com/public_profiles/1590ecef-5aa1-4e69-b24d-cb87e785a3cb" title="Qwiklab → https:&#x2F;&#x2F;google.qwiklabs.com&#x2F;public_profiles&#x2F;1590ecef-5aa1-4e69-b24d-cb87e785a3cb" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100000555093316" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000555093316" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">若要轉載文章，請保留原作者名稱與原始連結。</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
